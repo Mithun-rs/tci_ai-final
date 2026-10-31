@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Company, UserRole } from '../types';
-import { RefreshCw, ChevronDown, Building2 } from 'lucide-react';
+import { RefreshCw, ChevronDown, Building2, Bell } from 'lucide-react';
 
 interface NavbarProps {
   companies: Company[];
@@ -10,6 +10,7 @@ interface NavbarProps {
   onSelectRole: (role: UserRole) => void;
   onResetData: () => void;
   isResetting: boolean;
+  activeAlertCount?: number;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -19,25 +20,29 @@ export const Navbar: React.FC<NavbarProps> = ({
   currentRole,
   onSelectRole,
   onResetData,
-  isResetting
+  isResetting,
+  activeAlertCount = 1
 }) => {
   return (
-    <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200/80 transition-all">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Brand identity & Organization Selector */}
+        {/* Brand identity & Workspace selector */}
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-3">
-            <div className="h-8 w-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-bold text-xs tracking-wider">
+            <div className="h-9 w-9 rounded-xl bg-slate-950 flex items-center justify-center text-white font-bold text-xs tracking-wider shadow-sm">
               CX
             </div>
-            <span className="font-semibold text-slate-900 text-base tracking-tight">CX Pulse</span>
+            <div>
+              <span className="font-semibold text-slate-900 text-sm tracking-tight block leading-none">CX Pulse</span>
+              <span className="text-[10px] text-slate-400 font-medium">Enterprise Intelligence</span>
+            </div>
           </div>
 
-          <div className="h-5 w-px bg-slate-200 hidden sm:block"></div>
+          <div className="h-5 w-px bg-slate-200/80 hidden sm:block"></div>
 
           {/* Workspace selector */}
           <div className="relative flex items-center">
-            <div className="flex items-center space-x-2 bg-slate-50 hover:bg-slate-100/80 px-3 py-1.5 rounded-md border border-slate-200 transition-colors cursor-pointer">
+            <div className="flex items-center space-x-2 bg-slate-50/80 hover:bg-slate-100/90 px-3 py-1.5 rounded-lg border border-slate-200/80 transition-colors shadow-sm">
               <Building2 className="w-3.5 h-3.5 text-slate-500" />
               <select
                 value={selectedCompanyId}
@@ -56,20 +61,25 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Role Navigation */}
-        <div className="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs">
+        <div className="flex items-center bg-slate-100/80 p-1 rounded-xl border border-slate-200/70 text-xs shadow-inner">
           <button
             onClick={() => onSelectRole('cx_manager')}
-            className={`px-3.5 py-1.5 font-medium rounded-md transition-all ${
+            className={`flex items-center space-x-1.5 px-3.5 py-1.5 font-medium rounded-lg transition-all ${
               currentRole === 'cx_manager'
                 ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            CX Manager
+            <span>CX Manager</span>
+            {activeAlertCount > 0 && (
+              <span className="h-4 w-4 rounded-full bg-rose-50 text-rose-600 border border-rose-200 text-[10px] flex items-center justify-center font-bold">
+                {activeAlertCount}
+              </span>
+            )}
           </button>
           <button
             onClick={() => onSelectRole('business_analyst')}
-            className={`px-3.5 py-1.5 font-medium rounded-md transition-all ${
+            className={`px-3.5 py-1.5 font-medium rounded-lg transition-all ${
               currentRole === 'business_analyst'
                 ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60'
                 : 'text-slate-600 hover:text-slate-900'
@@ -79,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
           <button
             onClick={() => onSelectRole('customer')}
-            className={`px-3.5 py-1.5 font-medium rounded-md transition-all ${
+            className={`px-3.5 py-1.5 font-medium rounded-lg transition-all ${
               currentRole === 'customer'
                 ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60'
                 : 'text-slate-600 hover:text-slate-900'
@@ -95,13 +105,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={onResetData}
             disabled={isResetting}
             title="Reset to baseline scenario"
-            className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 rounded-md border border-slate-200 transition-colors shadow-sm disabled:opacity-50"
+            className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 rounded-lg border border-slate-200 transition-colors shadow-sm disabled:opacity-50"
           >
             <RefreshCw className={`w-3.5 h-3.5 text-slate-500 ${isResetting ? 'animate-spin' : ''}`} />
             <span className="hidden sm:inline">Reset Baseline</span>
           </button>
 
-          <div className="h-8 w-8 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-xs font-semibold text-slate-700">
+          <div className="h-8 w-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-semibold shadow-sm">
             JD
           </div>
         </div>
