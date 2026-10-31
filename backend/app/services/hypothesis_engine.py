@@ -54,9 +54,9 @@ class RootCauseHypothesisEngine:
         if not incident:
             return {"error": "Incident not found"}
 
-        # Store incoming evidence
+        # Store incoming evidence with unique timestamp to allow repeated injections
         evidence = IncidentEvidence(
-            id=f"evi_inj_{source_id}",
+            id=f"evi_inj_{source_id}_{int(datetime.utcnow().timestamp())}",
             incident_id=incident_id,
             source_type=evidence_type,
             source_id=source_id,
@@ -64,7 +64,7 @@ class RootCauseHypothesisEngine:
             correlation_score=0.98,
             timestamp=datetime.utcnow()
         )
-        self.db.add(evidence)
+        self.db.merge(evidence)
 
         # Count previous versions for audit trail
         history_count = self.db.query(InvestigationHistory).filter(
