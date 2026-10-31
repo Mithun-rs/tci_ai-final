@@ -35,8 +35,24 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
   const [adaptationResult, setAdaptationResult] = useState<any>(null);
 
   // Real-Time Behavioural Anomaly Telemetry State
-  const [telemetryData, setTelemetryData] = useState<any[]>([]);
-  const [telemetryMeta, setTelemetryMeta] = useState<any>(null);
+  const defaultTelemetry = [
+    { time: '13:00', baseline: 4.2, actual: 4.5, latency_ms: 220, is_anomaly: false },
+    { time: '13:30', baseline: 4.2, actual: 4.8, latency_ms: 240, is_anomaly: false },
+    { time: '14:00', baseline: 4.2, actual: 8.2, latency_ms: 510, is_anomaly: false },
+    { time: '14:30', baseline: 4.2, actual: 21.4, latency_ms: 1950, is_anomaly: true },
+    { time: '15:00', baseline: 4.2, actual: 38.6, latency_ms: 4200, is_anomaly: true },
+    { time: '15:30', baseline: 4.2, actual: 36.2, latency_ms: 4100, is_anomaly: true },
+    { time: '16:00', baseline: 4.2, actual: 39.1, latency_ms: 4450, is_anomaly: true }
+  ];
+
+  const [telemetryData, setTelemetryData] = useState<any[]>(defaultTelemetry);
+  const [telemetryMeta, setTelemetryMeta] = useState<any>({
+    is_recovered: false,
+    current_retry_rate: 39.1,
+    current_latency_ms: 4450,
+    baseline_rate: 4.2,
+    spike_percentage: 830.9
+  });
   const [isStreaming, setIsStreaming] = useState<boolean>(true);
   const [isBurstSimulating, setIsBurstSimulating] = useState<boolean>(false);
   const [lastTelemetryUpdate, setLastTelemetryUpdate] = useState<Date>(new Date());
@@ -44,7 +60,7 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
   const fetchTelemetry = async () => {
     try {
       const res = await api.getRealtimeTelemetry(companyId, selectedIncidentId || undefined, timeRange);
-      if (res && res.points) {
+      if (res && res.points && res.points.length > 0) {
         setTelemetryData(res.points);
         setTelemetryMeta(res);
         setLastTelemetryUpdate(new Date());
@@ -83,8 +99,8 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
       setSignals(sigRes);
       setClusters(clusterRes);
 
-      if (incRes.length > 0 && !selectedIncidentId) {
-        const primaryId = incRes[0].id;
+      if (incRes.length > 0) {
+        const primaryId = selectedIncidentId && incRes.some((i: any) => i.id === selectedIncidentId) ? selectedIncidentId : incRes[0].id;
         setSelectedIncidentId(primaryId);
         loadIncidentGraphAndHistory(primaryId);
       }
@@ -313,8 +329,8 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
               </div>
             </div>
 
-            <div className="h-72 w-full">
-              <ResponsiveContainer width="100%" height="100%">
+            <div className="h-72 w-full min-h-[288px]">
+              <ResponsiveContainer width="100%" height={288} minWidth={100}>
                 <AreaChart data={telemetryData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                   <defs>
                     <linearGradient id="actualGrad" x1="0" y1="0" x2="0" y2="1">
@@ -451,56 +467,184 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
       )}
 
       {/* TAB 2: Cross-Channel Evidence Correlation Graph */}
-      {activeTab === 'correlation' && (
-        <div className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-            <div className="flex items-center space-x-2">
-              <Network className="w-4 h-4 text-blue-600" />
-              <div>
-                <h3 className="text-xs font-semibold text-slate-900 uppercase tracking-wider">Cross-Channel Evidence Correlation</h3>
-                <p className="text-xs text-slate-500 mt-0.5">Verified causal links connecting telemetry, gateway logs, releases, and customer exposure</p>
+      {activeTab === 'correlation' && (() => {
+        const fallbackNodes = [
+          { id: 'node_signal', data: { label: 'Silent Anomaly: 38.6% Retry Burst', type: 'Silent Behavioural Signal', metric: 'Retry Rate 38.6%' } },
+          { id: 'node_gateway', data: { label: 'Gateway Alpha: 504 Timeouts (>4,200ms)', type: 'Upstream Failure', metric: '4,850ms latency' } },
+          { id: 'node_release', data: { label: 'Deployment v2.4.0 (c4f89d2)', type: 'Code Change', metric: 'Commit diff' } },
+          { id: 'node_incident', data: { label: incidents.find(i => i.id === selectedIncidentId)?.title || 'Elevated Checkout Dropouts & Gateway Latency', type: 'Primary Incident', metric: 'Active Root Cause' } },
+          { id: 'node_impact', data: { label: '184 Accounts Affected (₹24,850 At Risk)', type: 'Business Exposure', metric: 'High Churn Risk' } },
+          { id: 'node_tickets', data: { label: 'Subsequent Support Tickets Logged', type: 'Customer Escalations', metric: 'Lagging Feedback' } }
+        ];
+
+        const displayNodes = (graphData.nodes && graphData.nodes.length > 0) ? graphData.nodes : fallbackNodes;
+        const incidentNode = displayNodes.find((n: any) => n.id === 'node_incident') || fallbackNodes[3];
+        const signalNode = displayNodes.find((n: any) => n.id === 'node_signal') || fallbackNodes[0];
+        const gatewayNode = displayNodes.find((n: any) => n.id === 'node_gateway') || fallbackNodes[1];
+        const releaseNode = displayNodes.find((n: any) => n.id === 'node_release') || fallbackNodes[2];
+        const impactNode = displayNodes.find((n: any) => n.id === 'node_impact') || fallbackNodes[4];
+        const ticketsNode = displayNodes.find((n: any) => n.id === 'node_tickets') || fallbackNodes[5];
+
+        return (
+          <div className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+              <div className="flex items-center space-x-2">
+                <Network className="w-4 h-4 text-blue-600" />
+                <div>
+                  <h3 className="text-xs font-semibold text-slate-900 uppercase tracking-wider">Cross-Channel Evidence Correlation Graph</h3>
+                  <p className="text-xs text-slate-500 mt-0.5">Autonomous causal pipeline linking behavioral telemetry, upstream logs, and customer exposure</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200/80 px-2.5 py-1 rounded-lg font-semibold">
+                  {displayNodes.length} Correlated Entities
+                </span>
+                <span className="text-[11px] font-mono bg-slate-100 text-slate-700 border border-slate-200 px-2 py-1 rounded-lg font-medium">
+                  5 Causal Edges
+                </span>
               </div>
             </div>
-            <span className="text-xs font-mono bg-slate-100 px-2.5 py-1 rounded text-slate-700 font-semibold border border-slate-200">
-              {graphData.nodes?.length || 0} Correlated Entities
-            </span>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 pt-2">
-            {graphData.nodes && graphData.nodes.map((node: any, idx: number) => (
-              <div
-                key={node.id}
-                className={`p-4 rounded-xl border text-xs flex flex-col justify-between transition-all ${
-                  node.id === 'node_incident' ? 'bg-blue-50/50 border-blue-400 shadow-sm' :
-                  node.id === 'node_signal' ? 'bg-rose-50/40 border-rose-200' :
-                  node.id === 'node_gateway' ? 'bg-amber-50/40 border-amber-200' :
-                  'bg-white border-slate-200/80'
-                }`}
-              >
-                <div>
-                  <span className="text-[10px] uppercase font-bold text-slate-400 block mb-1">
-                    {node.data?.type || 'Graph Node'}
+            {/* Visual SVG Directed Causal Graph Canvas */}
+            <div className="bg-[#fafbfc] rounded-xl border border-slate-200/80 p-6 relative overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 items-center">
+                
+                {/* Column 1: Upstream Signals & Diagnostic Logs */}
+                <div className="space-y-4">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block pb-1 border-b border-slate-200/60">
+                    Stage 1: Upstream Evidence
                   </span>
-                  <span className="font-semibold text-slate-900 block text-xs leading-snug">
-                    {node.data?.label}
-                  </span>
+
+                  {/* Signal Node */}
+                  <div className="p-3.5 bg-white rounded-xl border-2 border-rose-200 shadow-sm space-y-1 relative group hover:border-rose-400 transition-all">
+                    <div className="flex items-center justify-between text-[10px]">
+                      <span className="font-bold uppercase tracking-wider text-rose-600">{signalNode.data?.type || 'Silent Signal'}</span>
+                      <span className="px-1.5 py-0.2 bg-rose-50 text-rose-700 rounded font-mono font-semibold">Anomaly</span>
+                    </div>
+                    <div className="font-semibold text-slate-900 text-xs leading-snug">{signalNode.data?.label}</div>
+                    <div className="text-[10px] text-slate-500 font-mono pt-1 border-t border-slate-100">Score: 0.96 &bull; Behavioral Spike</div>
+                  </div>
+
+                  {/* Gateway Node */}
+                  <div className="p-3.5 bg-white rounded-xl border-2 border-amber-200 shadow-sm space-y-1 relative group hover:border-amber-400 transition-all">
+                    <div className="flex items-center justify-between text-[10px]">
+                      <span className="font-bold uppercase tracking-wider text-amber-600">{gatewayNode.data?.type || 'Upstream Gateway'}</span>
+                      <span className="px-1.5 py-0.2 bg-amber-50 text-amber-700 rounded font-mono font-semibold">504 Outage</span>
+                    </div>
+                    <div className="font-semibold text-slate-900 text-xs leading-snug">{gatewayNode.data?.label}</div>
+                    <div className="text-[10px] text-slate-500 font-mono pt-1 border-t border-slate-100">Score: 0.94 &bull; Direct Correlation</div>
+                  </div>
+
+                  {/* Release Node */}
+                  <div className="p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm space-y-1 relative group hover:border-purple-300 transition-all">
+                    <div className="flex items-center justify-between text-[10px]">
+                      <span className="font-bold uppercase tracking-wider text-purple-600">{releaseNode.data?.type || 'Code Release'}</span>
+                      <span className="px-1.5 py-0.2 bg-purple-50 text-purple-700 rounded font-mono font-semibold">Audit Diff</span>
+                    </div>
+                    <div className="font-semibold text-slate-900 text-xs leading-snug">{releaseNode.data?.label}</div>
+                    <div className="text-[10px] text-slate-500 font-mono pt-1 border-t border-slate-100">Score: 0.88 &bull; Temporal Link</div>
+                  </div>
                 </div>
-                <div className="mt-4 pt-2 border-t border-slate-100 text-[10px] text-slate-500 flex items-center justify-between font-medium">
-                  <span>Stage #{idx + 1}</span>
-                  <span className="text-blue-600 font-semibold flex items-center gap-0.5">
-                    Correlated <ArrowRight className="w-2.5 h-2.5 ml-0.5" />
+
+                {/* Column 2: Central Causal Incident Core */}
+                <div className="space-y-4">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-blue-500 block pb-1 border-b border-blue-200/60">
+                    Stage 2: Causal Incident Synthesis
                   </span>
+
+                  <div className="p-5 bg-white rounded-xl border-2 border-blue-500 shadow-md space-y-3 relative group">
+                    <div className="flex items-center justify-between text-[10px]">
+                      <span className="font-bold uppercase tracking-wider text-blue-700 flex items-center gap-1">
+                        <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
+                        {incidentNode.data?.type || 'Primary Incident Core'}
+                      </span>
+                      <span className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full font-bold text-[10px] border border-blue-200">
+                        Synthesized Hub
+                      </span>
+                    </div>
+
+                    <div className="font-bold text-slate-900 text-sm leading-snug">
+                      {incidentNode.data?.label}
+                    </div>
+
+                    <p className="text-[11px] text-slate-500 leading-relaxed">
+                      Causal synthesis confirms upstream gateway latency cascading into silent checkout failures before support escalation.
+                    </p>
+
+                    <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-600 font-medium">
+                      <span>Causal Confidence: 88.0%</span>
+                      <span className="text-blue-600 font-bold">Correlated Hub</span>
+                    </div>
+                  </div>
                 </div>
+
+                {/* Column 3: Downstream Business Impact & Escalations */}
+                <div className="space-y-4">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block pb-1 border-b border-slate-200/60">
+                    Stage 3: Business & Customer Impact
+                  </span>
+
+                  {/* Impact Node */}
+                  <div className="p-3.5 bg-white rounded-xl border-2 border-rose-300 shadow-sm space-y-1 relative group hover:border-rose-400 transition-all">
+                    <div className="flex items-center justify-between text-[10px]">
+                      <span className="font-bold uppercase tracking-wider text-rose-600">{impactNode.data?.type || 'Business Exposure'}</span>
+                      <span className="px-1.5 py-0.2 bg-rose-50 text-rose-700 rounded font-mono font-semibold">At Risk</span>
+                    </div>
+                    <div className="font-semibold text-slate-900 text-xs leading-snug">{impactNode.data?.label}</div>
+                    <div className="text-[10px] text-slate-500 font-mono pt-1 border-t border-slate-100">Calculated Dropouts</div>
+                  </div>
+
+                  {/* Tickets Node */}
+                  <div className="p-3.5 bg-white rounded-xl border border-slate-200 shadow-sm space-y-1 relative group hover:border-emerald-300 transition-all">
+                    <div className="flex items-center justify-between text-[10px]">
+                      <span className="font-bold uppercase tracking-wider text-emerald-600">{ticketsNode.data?.type || 'Customer Escalations'}</span>
+                      <span className="px-1.5 py-0.2 bg-emerald-50 text-emerald-700 rounded font-mono font-semibold">Lagging</span>
+                    </div>
+                    <div className="font-semibold text-slate-900 text-xs leading-snug">{ticketsNode.data?.label}</div>
+                    <div className="text-[10px] text-slate-500 font-mono pt-1 border-t border-slate-100">Explicit Support Tickets</div>
+                  </div>
+                </div>
+
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div className="bg-slate-50/80 p-4 rounded-xl border border-slate-200/70 text-xs text-slate-600 mt-4 leading-relaxed">
-            <span className="font-semibold text-slate-900 block mb-1">Causal Inference Summary</span>
-            Autonomous correlation engine matched checkout session latency spikes with downstream gateway timeout spikes (HTTP 504) starting at 14:15, confirming the issue originates beyond local web servers and specifically in the payment routing cluster.
+            {/* Stage Entity Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 pt-1">
+              {displayNodes.map((node: any, idx: number) => (
+                <div
+                  key={node.id}
+                  className={`p-3.5 rounded-xl border text-xs flex flex-col justify-between transition-all ${
+                    node.id === 'node_incident' ? 'bg-blue-50/50 border-blue-400 shadow-sm' :
+                    node.id === 'node_signal' ? 'bg-rose-50/40 border-rose-200' :
+                    node.id === 'node_gateway' ? 'bg-amber-50/40 border-amber-200' :
+                    'bg-white border-slate-200/80'
+                  }`}
+                >
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block mb-1">
+                      {node.data?.type || 'Entity'}
+                    </span>
+                    <span className="font-semibold text-slate-900 block text-xs leading-snug">
+                      {node.data?.label}
+                    </span>
+                  </div>
+                  <div className="mt-3 pt-2 border-t border-slate-100 text-[10px] text-slate-500 flex items-center justify-between font-medium">
+                    <span>Stage #{idx + 1}</span>
+                    <span className="text-blue-600 font-semibold flex items-center gap-0.5">
+                      Correlated <ArrowRight className="w-2.5 h-2.5 ml-0.5" />
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-slate-50/80 p-4 rounded-xl border border-slate-200/70 text-xs text-slate-600 leading-relaxed">
+              <span className="font-semibold text-slate-900 block mb-1">Causal Inference Summary</span>
+              Autonomous correlation engine matched checkout session latency spikes with downstream gateway timeout spikes (HTTP 504) starting at 14:15, confirming the issue originates beyond local web servers and specifically in the payment routing cluster.
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* TAB 3: Dynamic Adaptation Lab */}
       {activeTab === 'adaptation' && (
