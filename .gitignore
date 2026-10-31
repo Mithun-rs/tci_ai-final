@@ -1,0 +1,34 @@
+# Environment variables & secrets
+.env
+*.env
+backend/.env
+
+# Databases & local caches
+*.db
+*.sqlite
+*.sqlite3
+cx_pulse.db
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+.npm/
+
+# Build artifacts
+dist/
+frontend/dist/
+build/
+.tmp/
+
+# Python caches
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# OS specific files
+.DS_Store
+Thumbs.db
