@@ -205,7 +205,7 @@ export const CXManagerDashboard: React.FC<CXManagerDashboardProps> = ({ companyI
           </div>
           <div className="flex items-baseline space-x-2">
             <span className="text-3xl font-bold text-slate-900 tracking-tight">
-              ${selectedIncident ? selectedIncident.transaction_value_at_risk.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) : '0'}
+              ₹{selectedIncident ? selectedIncident.transaction_value_at_risk.toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) : '0'}
             </span>
             <span className="text-xs font-semibold text-rose-600 flex items-center">
               <ArrowUpRight className="w-3.5 h-3.5" /> High Risk
@@ -565,7 +565,7 @@ export const CXManagerDashboard: React.FC<CXManagerDashboardProps> = ({ companyI
 
                       <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 border-t border-slate-100 pt-2 font-medium">
                         <span>Benefit: <span className="text-slate-900 font-semibold">{action.expected_benefit}%</span></span>
-                        <span>Est Cost: <span className="text-slate-900 font-semibold">${action.operational_cost.toFixed(2)}</span></span>
+                        <span>Est Cost: <span className="text-slate-900 font-semibold">₹{action.operational_cost.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span></span>
                         <span>Risk: <span className="text-slate-900 font-semibold uppercase">{action.operational_risk}</span></span>
                         <span>SLA: <span className="text-slate-900 font-semibold">{action.implementation_time_mins} mins</span></span>
                       </div>
@@ -651,7 +651,7 @@ export const CXManagerDashboard: React.FC<CXManagerDashboardProps> = ({ companyI
               </div>
 
               <div className="grid grid-cols-2 gap-2 text-slate-600 font-medium bg-slate-50/50 p-3 rounded-lg border border-slate-200/60">
-                <div>Est Cost: <span className="text-slate-900 font-semibold font-mono">${approvalModalAction.operational_cost.toFixed(2)}</span></div>
+                <div>Est Cost: <span className="text-slate-900 font-semibold font-mono">₹{approvalModalAction.operational_cost.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span></div>
                 <div>Risk Level: <span className="text-slate-900 font-semibold uppercase">{approvalModalAction.operational_risk}</span></div>
                 <div>Implementation: <span className="text-slate-900 font-semibold font-mono">{approvalModalAction.implementation_time_mins} mins</span></div>
                 <div>Expected Benefit: <span className="text-slate-900 font-semibold font-mono">{approvalModalAction.expected_benefit}%</span></div>

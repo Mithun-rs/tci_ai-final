@@ -49,7 +49,7 @@ class Transaction(Base):
     customer_id = Column(String(100), ForeignKey("customers.id"), nullable=True, index=True)
     order_id = Column(String(100), nullable=True, index=True)
     amount = Column(Float, nullable=False)
-    currency = Column(String(10), default="USD")
+    currency = Column(String(10), default="INR")
     payment_method = Column(String(50), nullable=True)
     status = Column(String(50), nullable=False) # success, failed, pending, refunded
     gateway_id = Column(String(50), nullable=True)

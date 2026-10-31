@@ -137,14 +137,14 @@ def seed_shopsphere_scenario(db: Session):
     for i in range(1, 121):
         cust = random.choice(customers)
         is_failed = (i > 35 and i % 3 != 0)
-        amt = round(random.uniform(45.0, 380.0), 2)
+        amt = round(random.uniform(450.0, 3800.0), 2)
         tx = Transaction(
             id=f"tx_ss_{i:04d}",
             company_id=company_id,
             customer_id=cust.id,
             order_id=f"ord_ss_{i:04d}",
             amount=amt,
-            currency="USD",
+            currency="INR",
             payment_method="GATEWAY_ALPHA" if i % 2 == 0 else "GATEWAY_BETA",
             status="failed" if is_failed else "success",
             gateway_id="GATEWAY_ALPHA" if i % 2 == 0 else "GATEWAY_BETA",
@@ -155,7 +155,7 @@ def seed_shopsphere_scenario(db: Session):
 
     # F. Support Tickets (Explicit complaints arrive later)
     complaints = [
-        ("Payment Deducted but Order Not Confirmed", "I attempted payment twice for my cart ($185.00). Amount was debited but the screen kept loading with a gateway error."),
+        ("Payment Deducted but Order Not Confirmed", "I attempted payment twice for my cart (₹14,500.00). Amount was debited but the screen kept loading with a gateway error."),
         ("Checkout Fails Repeatedly on v2.4", "Every time I tap confirm order, the page hangs at 99% and returns to checkout without order confirmation."),
         ("Double Charge on Credit Card", "Card debited twice due to retry button freezing during checkout."),
         ("Checkout Page Stalling", "Tried three times with Alpha Gateway, transaction failed with 504 timeout.")
@@ -265,7 +265,7 @@ def seed_shopsphere_scenario(db: Session):
         description="Shift active checkout traffic away from degraded Gateway Alpha to redundant Gateway Beta with immediate health check ping.",
         decision_score=86.5,
         expected_benefit=92.0,
-        operational_cost=150.00,
+        operational_cost=1500.00,
         operational_risk="low",
         implementation_time_mins=3,
         approval_status="pending"
@@ -278,7 +278,7 @@ def seed_shopsphere_scenario(db: Session):
         description="Revert mobile web bundle and checkout microservices to previous stable commit c1b90aa.",
         decision_score=48.0,
         expected_benefit=55.0,
-        operational_cost=1200.00,
+        operational_cost=12000.00,
         operational_risk="high",
         implementation_time_mins=25,
         approval_status="pending"
@@ -286,12 +286,12 @@ def seed_shopsphere_scenario(db: Session):
     act3 = RecoveryAction(
         id="act_ss_03",
         incident_id="inc_ss_01",
-        title="Issue $15 Courtesy Credit & Proactive Push Notification to 184 Affected Customers",
+        title="Issue ₹500 Courtesy Credit & Proactive Push Notification to 184 Affected Customers",
         action_type="customer_credit",
         description="Notify affected customers whose transactions timed out with one-click re-order voucher to preserve loyalty.",
         decision_score=78.2,
         expected_benefit=85.0,
-        operational_cost=2760.00,
+        operational_cost=92000.00,
         operational_risk="low",
         implementation_time_mins=5,
         approval_status="pending"

@@ -1,5 +1,12 @@
 import os
 import sys
+
+# Configure UTF-8 encoding for Windows terminals
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 import pandas as pd
 
 # Add backend to path

@@ -99,7 +99,7 @@ class CrossChannelCorrelationEngine:
             "id": "node_impact",
             "type": "impactNode",
             "data": {
-                "label": f"{incident.affected_customers_count} Customers Affected (${incident.transaction_value_at_risk:,.2f} at Risk)",
+                "label": f"{incident.affected_customers_count} Customers Affected (₹{incident.transaction_value_at_risk:,.2f} at Risk)",
                 "type": "Business Exposure"
             },
             "position": {"x": 180, "y": 300}

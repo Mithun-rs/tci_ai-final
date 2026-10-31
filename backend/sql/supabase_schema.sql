@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS transactions (
     customer_id VARCHAR(100) REFERENCES customers(id) ON DELETE CASCADE,
     order_id VARCHAR(100),
     amount NUMERIC(12, 2) NOT NULL,
-    currency VARCHAR(10) DEFAULT 'USD',
+    currency VARCHAR(10) DEFAULT 'INR',
     payment_method VARCHAR(50),
     status VARCHAR(50) NOT NULL CHECK (status IN ('success', 'failed', 'pending', 'refunded')),
     gateway_id VARCHAR(50),
