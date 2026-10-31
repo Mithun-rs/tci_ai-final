@@ -1,0 +1,301 @@
+review_id,customer_id,rating,review_text,sentiment,issue_category,platform,timestamp
+REV-0001,CUST-0005,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Gateway Timeout,Web,2026-10-18T04:33:38Z
+REV-0002,CUST-0084,4,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-09T19:03:38Z
+REV-0003,CUST-0199,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Web,2026-10-12T07:35:48Z
+REV-0004,CUST-0195,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-30T09:48:32Z
+REV-0005,CUST-0184,3,"Product is okay, packaging could have been better.",Neutral,Delivery Delay,iOS,2026-10-25T22:32:03Z
+REV-0006,CUST-0047,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Web,2026-10-13T05:01:23Z
+REV-0007,CUST-0088,1,Could not place my order during the flash sale due to payment errors.,Negative,App Crash,Android,2026-10-09T11:55:29Z
+REV-0008,CUST-0081,4,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-09T21:20:43Z
+REV-0009,CUST-0162,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Delivery Delay,Web,2026-10-26T05:27:13Z
+REV-0010,CUST-0028,1,App kept crashing when I tried to complete my payment on Android!,Negative,App Crash,iOS,2026-10-24T06:54:25Z
+REV-0011,CUST-0022,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,iOS,2026-10-06T02:22:08Z
+REV-0012,CUST-0156,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,Packaging,Android,2026-10-10T03:56:10Z
+REV-0013,CUST-0075,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,iOS,2026-10-02T13:57:51Z
+REV-0014,CUST-0177,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-31T04:04:45Z
+REV-0015,CUST-0130,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Web,2026-10-23T19:31:00Z
+REV-0016,CUST-0042,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-08T12:22:30Z
+REV-0017,CUST-0063,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-31T22:32:00Z
+REV-0018,CUST-0018,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Gateway Timeout,Web,2026-10-04T09:45:37Z
+REV-0019,CUST-0077,4,"Great customer support, resolved my sizing query instantly.",Positive,None,Web,2026-10-04T03:23:48Z
+REV-0020,CUST-0020,1,UPI payment failed three times and money was debited without confirmation!,Negative,Gateway Timeout,Web,2026-10-26T12:25:12Z
+REV-0021,CUST-0053,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-25T03:16:55Z
+REV-0022,CUST-0184,1,UPI payment failed three times and money was debited without confirmation!,Negative,Gateway Timeout,iOS,2026-10-07T23:24:33Z
+REV-0023,CUST-0168,2,UPI payment failed three times and money was debited without confirmation!,Negative,Payment Failure,Android,2026-10-13T16:10:05Z
+REV-0024,CUST-0126,3,"Product is okay, packaging could have been better.",Neutral,Packaging,Android,2026-10-24T08:12:05Z
+REV-0025,CUST-0151,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-16T10:29:06Z
+REV-0026,CUST-0145,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-27T21:49:59Z
+REV-0027,CUST-0049,4,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-11T17:38:57Z
+REV-0028,CUST-0123,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-13T20:58:54Z
+REV-0029,CUST-0158,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-25T12:06:06Z
+REV-0030,CUST-0068,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-25T02:58:24Z
+REV-0031,CUST-0024,2,App kept crashing when I tried to complete my payment on Android!,Negative,Payment Failure,iOS,2026-10-12T03:39:49Z
+REV-0032,CUST-0112,5,Amazing product quality! Delivery was lightning fast.,Positive,None,iOS,2026-10-12T15:58:20Z
+REV-0033,CUST-0110,5,"Great customer support, resolved my sizing query instantly.",Positive,None,iOS,2026-10-05T18:35:43Z
+REV-0034,CUST-0091,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-26T03:58:40Z
+REV-0035,CUST-0198,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,iOS,2026-10-12T17:52:49Z
+REV-0036,CUST-0080,3,Prices are competitive compared to other platforms.,Neutral,Delivery Delay,iOS,2026-10-23T04:46:13Z
+REV-0037,CUST-0127,3,Prices are competitive compared to other platforms.,Neutral,Packaging,Web,2026-10-16T16:51:57Z
+REV-0038,CUST-0187,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-11T17:02:59Z
+REV-0039,CUST-0154,3,"Product is okay, packaging could have been better.",Neutral,Delivery Delay,Android,2026-10-29T10:25:15Z
+REV-0040,CUST-0092,4,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-06T15:37:05Z
+REV-0041,CUST-0064,1,UPI payment failed three times and money was debited without confirmation!,Negative,Payment Failure,Android,2026-10-15T14:56:11Z
+REV-0042,CUST-0141,5,"Great customer support, resolved my sizing query instantly.",Positive,None,iOS,2026-10-20T14:12:31Z
+REV-0043,CUST-0079,3,Prices are competitive compared to other platforms.,Neutral,Packaging,iOS,2026-10-23T15:07:20Z
+REV-0044,CUST-0143,3,Prices are competitive compared to other platforms.,Neutral,General Inquiry,Android,2026-10-07T16:42:20Z
+REV-0045,CUST-0139,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-20T09:23:16Z
+REV-0046,CUST-0041,3,"Product is okay, packaging could have been better.",Neutral,General Inquiry,iOS,2026-10-04T21:18:15Z
+REV-0047,CUST-0152,4,"Really love the new app interface, very smooth and intuitive.",Positive,None,iOS,2026-10-07T08:37:10Z
+REV-0048,CUST-0181,3,"Standard shopping experience, nothing extraordinary.",Neutral,Delivery Delay,Android,2026-10-04T23:06:08Z
+REV-0049,CUST-0128,3,Prices are competitive compared to other platforms.,Neutral,Packaging,Android,2026-10-16T16:44:04Z
+REV-0050,CUST-0008,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-03T11:20:28Z
+REV-0051,CUST-0142,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Web,2026-10-29T21:45:06Z
+REV-0052,CUST-0195,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Delivery Delay,Android,2026-10-16T01:00:08Z
+REV-0053,CUST-0171,2,App kept crashing when I tried to complete my payment on Android!,Negative,Checkout Error,Web,2026-10-24T07:18:12Z
+REV-0054,CUST-0031,2,App kept crashing when I tried to complete my payment on Android!,Negative,App Crash,Web,2026-10-17T20:53:40Z
+REV-0055,CUST-0025,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-30T19:37:19Z
+REV-0056,CUST-0052,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-13T13:26:17Z
+REV-0057,CUST-0089,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-20T18:14:01Z
+REV-0058,CUST-0016,1,Could not place my order during the flash sale due to payment errors.,Negative,Gateway Timeout,Android,2026-10-24T09:11:51Z
+REV-0059,CUST-0004,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-28T11:37:58Z
+REV-0060,CUST-0050,3,Prices are competitive compared to other platforms.,Neutral,Delivery Delay,Android,2026-10-17T03:22:42Z
+REV-0061,CUST-0008,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-15T06:58:06Z
+REV-0062,CUST-0067,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Web,2026-10-27T08:17:40Z
+REV-0063,CUST-0141,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,Packaging,iOS,2026-10-20T06:03:26Z
+REV-0064,CUST-0108,1,Could not place my order during the flash sale due to payment errors.,Negative,Gateway Timeout,Android,2026-10-24T23:18:34Z
+REV-0065,CUST-0085,4,"Great customer support, resolved my sizing query instantly.",Positive,None,Web,2026-10-30T19:04:23Z
+REV-0066,CUST-0077,3,"App is decent, sometimes logs out unexpectedly.",Neutral,General Inquiry,Web,2026-10-19T20:56:56Z
+REV-0067,CUST-0185,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Web,2026-10-11T00:14:24Z
+REV-0068,CUST-0012,2,Customer service was unresponsive when my transaction failed.,Negative,App Crash,Android,2026-10-25T03:29:46Z
+REV-0069,CUST-0110,4,"Great customer support, resolved my sizing query instantly.",Positive,None,iOS,2026-10-04T19:53:11Z
+REV-0070,CUST-0156,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,Packaging,Android,2026-10-13T00:17:57Z
+REV-0071,CUST-0158,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-26T07:58:23Z
+REV-0072,CUST-0157,2,UPI payment failed three times and money was debited without confirmation!,Negative,Gateway Timeout,iOS,2026-10-24T00:40:16Z
+REV-0073,CUST-0156,3,Prices are competitive compared to other platforms.,Neutral,General Inquiry,Android,2026-10-26T18:30:26Z
+REV-0074,CUST-0127,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-19T20:33:58Z
+REV-0075,CUST-0097,2,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Checkout Error,Android,2026-10-13T10:42:46Z
+REV-0076,CUST-0021,5,Amazing product quality! Delivery was lightning fast.,Positive,None,iOS,2026-10-28T09:27:01Z
+REV-0077,CUST-0031,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-28T02:14:45Z
+REV-0078,CUST-0076,3,"Standard shopping experience, nothing extraordinary.",Neutral,General Inquiry,Android,2026-10-29T20:37:48Z
+REV-0079,CUST-0066,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-11T03:26:37Z
+REV-0080,CUST-0130,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,General Inquiry,Web,2026-10-11T19:19:06Z
+REV-0081,CUST-0060,2,Customer service was unresponsive when my transaction failed.,Negative,Payment Failure,iOS,2026-10-22T05:01:01Z
+REV-0082,CUST-0050,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-08T15:54:04Z
+REV-0083,CUST-0118,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-12T02:02:26Z
+REV-0084,CUST-0050,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-13T23:25:02Z
+REV-0085,CUST-0149,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-24T20:39:48Z
+REV-0086,CUST-0046,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-21T13:37:06Z
+REV-0087,CUST-0177,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-09T09:17:48Z
+REV-0088,CUST-0130,3,"Product is okay, packaging could have been better.",Neutral,Delivery Delay,Web,2026-10-22T13:00:39Z
+REV-0089,CUST-0067,4,"Great customer support, resolved my sizing query instantly.",Positive,None,Web,2026-10-14T09:46:43Z
+REV-0090,CUST-0051,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-19T19:35:28Z
+REV-0091,CUST-0123,1,UPI payment failed three times and money was debited without confirmation!,Negative,Gateway Timeout,Web,2026-10-20T11:40:43Z
+REV-0092,CUST-0034,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,App Crash,Android,2026-10-03T08:18:41Z
+REV-0093,CUST-0003,1,App kept crashing when I tried to complete my payment on Android!,Negative,App Crash,iOS,2026-10-24T17:34:04Z
+REV-0094,CUST-0189,2,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Payment Failure,Android,2026-10-30T11:14:13Z
+REV-0095,CUST-0005,1,Could not place my order during the flash sale due to payment errors.,Negative,Payment Failure,Web,2026-10-12T07:09:18Z
+REV-0096,CUST-0030,1,Customer service was unresponsive when my transaction failed.,Negative,Checkout Error,iOS,2026-10-11T22:57:03Z
+REV-0097,CUST-0098,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,Delivery Delay,Android,2026-10-18T11:08:08Z
+REV-0098,CUST-0099,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-22T23:06:12Z
+REV-0099,CUST-0102,4,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-03T07:18:24Z
+REV-0100,CUST-0080,5,Amazing product quality! Delivery was lightning fast.,Positive,None,iOS,2026-10-10T03:19:20Z
+REV-0101,CUST-0069,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-13T15:49:27Z
+REV-0102,CUST-0145,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-27T22:16:58Z
+REV-0103,CUST-0080,5,Amazing product quality! Delivery was lightning fast.,Positive,None,iOS,2026-10-08T22:26:28Z
+REV-0104,CUST-0188,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-29T02:47:15Z
+REV-0105,CUST-0076,3,"Standard shopping experience, nothing extraordinary.",Neutral,Delivery Delay,Android,2026-10-07T14:13:12Z
+REV-0106,CUST-0086,4,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-29T18:58:18Z
+REV-0107,CUST-0049,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-11T03:32:51Z
+REV-0108,CUST-0047,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Web,2026-10-12T09:40:52Z
+REV-0109,CUST-0049,1,App kept crashing when I tried to complete my payment on Android!,Negative,Checkout Error,Android,2026-10-31T21:06:56Z
+REV-0110,CUST-0068,2,App kept crashing when I tried to complete my payment on Android!,Negative,Checkout Error,Android,2026-10-28T08:38:50Z
+REV-0111,CUST-0082,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-08T18:25:09Z
+REV-0112,CUST-0144,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-04T15:12:43Z
+REV-0113,CUST-0058,3,"Standard shopping experience, nothing extraordinary.",Neutral,General Inquiry,Android,2026-10-28T04:20:41Z
+REV-0114,CUST-0197,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-19T04:29:12Z
+REV-0115,CUST-0180,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,Delivery Delay,Android,2026-10-11T21:05:05Z
+REV-0116,CUST-0200,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,General Inquiry,iOS,2026-10-06T03:46:29Z
+REV-0117,CUST-0030,1,UPI payment failed three times and money was debited without confirmation!,Negative,Gateway Timeout,iOS,2026-10-11T06:28:42Z
+REV-0118,CUST-0040,1,Customer service was unresponsive when my transaction failed.,Negative,App Crash,Android,2026-10-31T20:53:36Z
+REV-0119,CUST-0053,3,"Product is okay, packaging could have been better.",Neutral,General Inquiry,Android,2026-10-11T12:35:49Z
+REV-0120,CUST-0194,2,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Gateway Timeout,iOS,2026-10-11T12:40:11Z
+REV-0121,CUST-0166,5,"Great customer support, resolved my sizing query instantly.",Positive,None,iOS,2026-10-30T20:03:39Z
+REV-0122,CUST-0117,4,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-06T13:24:31Z
+REV-0123,CUST-0177,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Delivery Delay,Android,2026-10-24T20:57:42Z
+REV-0124,CUST-0014,4,Amazing product quality! Delivery was lightning fast.,Positive,None,iOS,2026-10-19T00:16:14Z
+REV-0125,CUST-0047,3,"Standard shopping experience, nothing extraordinary.",Neutral,General Inquiry,Web,2026-10-12T18:40:04Z
+REV-0126,CUST-0058,3,"App is decent, sometimes logs out unexpectedly.",Neutral,General Inquiry,Android,2026-10-17T01:40:24Z
+REV-0127,CUST-0131,4,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-27T13:31:58Z
+REV-0128,CUST-0128,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-08T18:54:58Z
+REV-0129,CUST-0119,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-30T12:08:32Z
+REV-0130,CUST-0125,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-24T17:35:55Z
+REV-0131,CUST-0140,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-28T00:19:57Z
+REV-0132,CUST-0005,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-28T15:03:44Z
+REV-0133,CUST-0159,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-24T01:26:18Z
+REV-0134,CUST-0074,3,Prices are competitive compared to other platforms.,Neutral,Delivery Delay,iOS,2026-10-30T04:10:47Z
+REV-0135,CUST-0199,1,App kept crashing when I tried to complete my payment on Android!,Negative,Gateway Timeout,Web,2026-10-21T05:48:11Z
+REV-0136,CUST-0182,2,UPI payment failed three times and money was debited without confirmation!,Negative,Gateway Timeout,Android,2026-10-15T16:58:04Z
+REV-0137,CUST-0199,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Web,2026-10-31T12:21:28Z
+REV-0138,CUST-0107,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-07T16:41:31Z
+REV-0139,CUST-0094,5,Amazing product quality! Delivery was lightning fast.,Positive,None,iOS,2026-10-15T20:10:10Z
+REV-0140,CUST-0078,1,Could not place my order during the flash sale due to payment errors.,Negative,Payment Failure,Web,2026-10-22T16:45:57Z
+REV-0141,CUST-0100,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-23T16:18:19Z
+REV-0142,CUST-0198,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,iOS,2026-10-06T01:25:13Z
+REV-0143,CUST-0031,2,Could not place my order during the flash sale due to payment errors.,Negative,Payment Failure,Web,2026-10-15T14:38:59Z
+REV-0144,CUST-0093,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,Delivery Delay,iOS,2026-10-09T12:03:32Z
+REV-0145,CUST-0107,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-23T23:56:54Z
+REV-0146,CUST-0007,2,Customer service was unresponsive when my transaction failed.,Negative,App Crash,Web,2026-10-04T13:25:13Z
+REV-0147,CUST-0154,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-13T08:38:54Z
+REV-0148,CUST-0078,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,General Inquiry,Web,2026-10-18T23:09:13Z
+REV-0149,CUST-0035,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-28T01:32:56Z
+REV-0150,CUST-0014,2,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,App Crash,iOS,2026-10-11T05:48:16Z
+REV-0151,CUST-0125,4,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-05T12:38:18Z
+REV-0152,CUST-0092,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-24T23:05:04Z
+REV-0153,CUST-0148,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,iOS,2026-10-18T07:19:14Z
+REV-0154,CUST-0069,3,"Standard shopping experience, nothing extraordinary.",Neutral,Packaging,Android,2026-10-08T12:08:56Z
+REV-0155,CUST-0064,3,"Product is okay, packaging could have been better.",Neutral,General Inquiry,Android,2026-10-15T06:08:59Z
+REV-0156,CUST-0191,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-28T11:09:38Z
+REV-0157,CUST-0151,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-03T11:13:16Z
+REV-0158,CUST-0054,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-06T08:40:09Z
+REV-0159,CUST-0162,1,Could not place my order during the flash sale due to payment errors.,Negative,App Crash,Web,2026-10-10T22:52:39Z
+REV-0160,CUST-0142,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-06T20:09:39Z
+REV-0161,CUST-0007,3,"Standard shopping experience, nothing extraordinary.",Neutral,Delivery Delay,Web,2026-10-19T04:02:35Z
+REV-0162,CUST-0055,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Checkout Error,Android,2026-10-19T08:51:19Z
+REV-0163,CUST-0124,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,iOS,2026-10-13T01:22:10Z
+REV-0164,CUST-0092,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-27T07:10:57Z
+REV-0165,CUST-0062,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-22T20:07:32Z
+REV-0166,CUST-0123,4,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-08T07:05:18Z
+REV-0167,CUST-0023,3,"Product is okay, packaging could have been better.",Neutral,Packaging,Android,2026-10-23T21:24:15Z
+REV-0168,CUST-0193,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Packaging,iOS,2026-10-23T17:19:59Z
+REV-0169,CUST-0162,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-20T06:22:04Z
+REV-0170,CUST-0176,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-12T14:46:26Z
+REV-0171,CUST-0109,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-23T21:00:45Z
+REV-0172,CUST-0180,4,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-08T23:33:33Z
+REV-0173,CUST-0048,3,"Product is okay, packaging could have been better.",Neutral,Delivery Delay,Android,2026-10-02T17:16:12Z
+REV-0174,CUST-0146,2,Could not place my order during the flash sale due to payment errors.,Negative,Payment Failure,Web,2026-10-27T10:36:35Z
+REV-0175,CUST-0039,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,General Inquiry,iOS,2026-10-12T00:19:48Z
+REV-0176,CUST-0156,3,"App is decent, sometimes logs out unexpectedly.",Neutral,General Inquiry,Android,2026-10-21T05:14:41Z
+REV-0177,CUST-0109,3,"App is decent, sometimes logs out unexpectedly.",Neutral,General Inquiry,iOS,2026-10-11T05:35:45Z
+REV-0178,CUST-0082,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-05T09:57:43Z
+REV-0179,CUST-0053,4,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-20T11:30:53Z
+REV-0180,CUST-0182,1,Could not place my order during the flash sale due to payment errors.,Negative,Payment Failure,Android,2026-10-27T00:21:14Z
+REV-0181,CUST-0134,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-21T08:52:09Z
+REV-0182,CUST-0169,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Web,2026-10-28T21:04:05Z
+REV-0183,CUST-0082,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-27T01:16:33Z
+REV-0184,CUST-0188,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-18T15:43:38Z
+REV-0185,CUST-0157,1,UPI payment failed three times and money was debited without confirmation!,Negative,Checkout Error,iOS,2026-10-25T23:39:54Z
+REV-0186,CUST-0174,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-27T05:19:54Z
+REV-0187,CUST-0122,3,"Standard shopping experience, nothing extraordinary.",Neutral,General Inquiry,Web,2026-10-27T06:31:54Z
+REV-0188,CUST-0074,2,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Payment Failure,iOS,2026-10-19T20:32:16Z
+REV-0189,CUST-0039,5,"Great customer support, resolved my sizing query instantly.",Positive,None,iOS,2026-10-10T03:28:40Z
+REV-0190,CUST-0146,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,App Crash,Web,2026-10-15T13:22:20Z
+REV-0191,CUST-0088,2,App kept crashing when I tried to complete my payment on Android!,Negative,Gateway Timeout,Android,2026-10-05T08:48:22Z
+REV-0192,CUST-0121,2,UPI payment failed three times and money was debited without confirmation!,Negative,App Crash,Android,2026-10-17T04:18:57Z
+REV-0193,CUST-0178,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-12T04:52:59Z
+REV-0194,CUST-0005,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-25T06:23:01Z
+REV-0195,CUST-0181,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-22T07:14:10Z
+REV-0196,CUST-0081,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Payment Failure,iOS,2026-10-13T15:03:47Z
+REV-0197,CUST-0107,3,"Product is okay, packaging could have been better.",Neutral,Packaging,Android,2026-10-22T14:40:38Z
+REV-0198,CUST-0135,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-16T00:09:01Z
+REV-0199,CUST-0126,1,UPI payment failed three times and money was debited without confirmation!,Negative,Checkout Error,Android,2026-10-02T16:11:07Z
+REV-0200,CUST-0002,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-08T00:23:58Z
+REV-0201,CUST-0070,4,Amazing product quality! Delivery was lightning fast.,Positive,None,iOS,2026-10-22T03:12:32Z
+REV-0202,CUST-0186,3,Prices are competitive compared to other platforms.,Neutral,General Inquiry,Android,2026-10-02T10:59:04Z
+REV-0203,CUST-0180,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-08T04:44:07Z
+REV-0204,CUST-0026,1,UPI payment failed three times and money was debited without confirmation!,Negative,Payment Failure,Android,2026-10-30T07:09:35Z
+REV-0205,CUST-0154,1,App kept crashing when I tried to complete my payment on Android!,Negative,App Crash,Android,2026-10-11T08:11:29Z
+REV-0206,CUST-0049,1,Could not place my order during the flash sale due to payment errors.,Negative,Payment Failure,Android,2026-10-02T20:52:28Z
+REV-0207,CUST-0040,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-04T14:00:20Z
+REV-0208,CUST-0023,3,"Standard shopping experience, nothing extraordinary.",Neutral,Delivery Delay,Android,2026-10-20T21:13:07Z
+REV-0209,CUST-0052,4,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-12T16:02:57Z
+REV-0210,CUST-0015,2,Customer service was unresponsive when my transaction failed.,Negative,App Crash,Android,2026-10-04T08:33:09Z
+REV-0211,CUST-0180,1,App kept crashing when I tried to complete my payment on Android!,Negative,Gateway Timeout,Android,2026-10-04T18:53:57Z
+REV-0212,CUST-0045,3,"Standard shopping experience, nothing extraordinary.",Neutral,Packaging,Android,2026-10-11T07:28:54Z
+REV-0213,CUST-0091,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-08T22:49:10Z
+REV-0214,CUST-0031,4,"Great customer support, resolved my sizing query instantly.",Positive,None,Web,2026-10-09T17:47:51Z
+REV-0215,CUST-0065,1,App kept crashing when I tried to complete my payment on Android!,Negative,Payment Failure,Web,2026-10-25T15:55:13Z
+REV-0216,CUST-0052,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Web,2026-10-16T06:14:25Z
+REV-0217,CUST-0017,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-10T11:13:30Z
+REV-0218,CUST-0037,2,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Payment Failure,Web,2026-10-05T02:06:39Z
+REV-0219,CUST-0195,3,"Standard shopping experience, nothing extraordinary.",Neutral,Delivery Delay,Android,2026-10-25T18:32:59Z
+REV-0220,CUST-0089,3,Prices are competitive compared to other platforms.,Neutral,General Inquiry,Android,2026-10-14T09:40:40Z
+REV-0221,CUST-0185,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-31T05:12:06Z
+REV-0222,CUST-0067,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,App Crash,Web,2026-10-14T22:25:35Z
+REV-0223,CUST-0198,3,Prices are competitive compared to other platforms.,Neutral,Packaging,iOS,2026-10-07T04:37:16Z
+REV-0224,CUST-0061,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Delivery Delay,iOS,2026-10-05T10:18:43Z
+REV-0225,CUST-0054,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-04T22:18:37Z
+REV-0226,CUST-0177,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-04T02:07:01Z
+REV-0227,CUST-0055,3,"Product is okay, packaging could have been better.",Neutral,General Inquiry,Android,2026-10-11T19:44:01Z
+REV-0228,CUST-0183,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-08T12:40:48Z
+REV-0229,CUST-0180,3,"Standard shopping experience, nothing extraordinary.",Neutral,Delivery Delay,Android,2026-10-24T17:05:44Z
+REV-0230,CUST-0135,3,"Standard shopping experience, nothing extraordinary.",Neutral,General Inquiry,Android,2026-10-10T17:52:55Z
+REV-0231,CUST-0153,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Gateway Timeout,Android,2026-10-08T04:04:34Z
+REV-0232,CUST-0139,2,Customer service was unresponsive when my transaction failed.,Negative,Payment Failure,Android,2026-10-23T12:48:33Z
+REV-0233,CUST-0063,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,Packaging,Android,2026-10-20T08:16:23Z
+REV-0234,CUST-0146,2,App kept crashing when I tried to complete my payment on Android!,Negative,Checkout Error,Web,2026-10-03T20:56:07Z
+REV-0235,CUST-0008,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-05T06:58:57Z
+REV-0236,CUST-0038,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,iOS,2026-10-23T01:35:58Z
+REV-0237,CUST-0048,4,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-14T04:20:35Z
+REV-0238,CUST-0151,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-16T05:54:25Z
+REV-0239,CUST-0039,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,iOS,2026-10-27T04:46:22Z
+REV-0240,CUST-0047,4,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Web,2026-10-06T00:40:46Z
+REV-0241,CUST-0130,1,UPI payment failed three times and money was debited without confirmation!,Negative,Gateway Timeout,Web,2026-10-21T17:42:24Z
+REV-0242,CUST-0195,1,Could not place my order during the flash sale due to payment errors.,Negative,App Crash,Android,2026-10-27T19:18:34Z
+REV-0243,CUST-0067,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Web,2026-10-15T15:09:49Z
+REV-0244,CUST-0084,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Android,2026-10-12T15:49:15Z
+REV-0245,CUST-0128,2,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Gateway Timeout,Android,2026-10-16T22:40:21Z
+REV-0246,CUST-0024,3,"Product is okay, packaging could have been better.",Neutral,General Inquiry,iOS,2026-10-29T19:07:34Z
+REV-0247,CUST-0017,1,Could not place my order during the flash sale due to payment errors.,Negative,Payment Failure,iOS,2026-10-19T01:04:02Z
+REV-0248,CUST-0076,2,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Gateway Timeout,Android,2026-10-06T06:18:09Z
+REV-0249,CUST-0057,3,Prices are competitive compared to other platforms.,Neutral,General Inquiry,Android,2026-10-17T12:12:12Z
+REV-0250,CUST-0129,3,"Product is okay, packaging could have been better.",Neutral,Delivery Delay,Android,2026-10-09T08:33:58Z
+REV-0251,CUST-0068,1,App kept crashing when I tried to complete my payment on Android!,Negative,Checkout Error,Android,2026-10-21T00:15:17Z
+REV-0252,CUST-0166,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,iOS,2026-10-18T01:13:25Z
+REV-0253,CUST-0105,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-19T05:15:17Z
+REV-0254,CUST-0143,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-10T16:13:47Z
+REV-0255,CUST-0003,3,"Product is okay, packaging could have been better.",Neutral,Delivery Delay,iOS,2026-10-23T19:25:09Z
+REV-0256,CUST-0020,4,"Great customer support, resolved my sizing query instantly.",Positive,None,Web,2026-10-16T04:40:31Z
+REV-0257,CUST-0099,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Packaging,iOS,2026-10-26T06:24:16Z
+REV-0258,CUST-0104,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Packaging,Android,2026-10-04T11:24:25Z
+REV-0259,CUST-0089,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-05T23:25:39Z
+REV-0260,CUST-0138,3,Prices are competitive compared to other platforms.,Neutral,Delivery Delay,Android,2026-10-24T05:49:43Z
+REV-0261,CUST-0181,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-06T12:49:02Z
+REV-0262,CUST-0130,4,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-25T11:25:10Z
+REV-0263,CUST-0026,4,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-27T20:39:00Z
+REV-0264,CUST-0181,2,Could not place my order during the flash sale due to payment errors.,Negative,Gateway Timeout,Android,2026-10-19T20:47:29Z
+REV-0265,CUST-0017,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,iOS,2026-10-09T03:19:18Z
+REV-0266,CUST-0160,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Payment Failure,Web,2026-10-19T07:59:06Z
+REV-0267,CUST-0137,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-03T13:48:59Z
+REV-0268,CUST-0186,1,Could not place my order during the flash sale due to payment errors.,Negative,Gateway Timeout,Android,2026-10-24T09:13:41Z
+REV-0269,CUST-0088,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Android,2026-10-16T05:42:15Z
+REV-0270,CUST-0127,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Payment Failure,Web,2026-10-10T15:55:48Z
+REV-0271,CUST-0038,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Packaging,iOS,2026-10-04T22:06:07Z
+REV-0272,CUST-0195,3,"App is decent, sometimes logs out unexpectedly.",Neutral,Packaging,Android,2026-10-20T07:32:57Z
+REV-0273,CUST-0065,1,Customer service was unresponsive when my transaction failed.,Negative,Gateway Timeout,Web,2026-10-10T02:38:04Z
+REV-0274,CUST-0131,3,"Delivery took 4 days instead of 2, but acceptable.",Neutral,Delivery Delay,Android,2026-10-15T19:59:52Z
+REV-0275,CUST-0073,1,UPI payment failed three times and money was debited without confirmation!,Negative,Checkout Error,Android,2026-10-22T03:45:37Z
+REV-0276,CUST-0170,3,"Product is okay, packaging could have been better.",Neutral,General Inquiry,Web,2026-10-18T10:16:50Z
+REV-0277,CUST-0150,3,"Standard shopping experience, nothing extraordinary.",Neutral,Packaging,iOS,2026-10-14T08:05:55Z
+REV-0278,CUST-0114,4,Amazing product quality! Delivery was lightning fast.,Positive,None,iOS,2026-10-08T13:58:46Z
+REV-0279,CUST-0089,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-20T13:57:56Z
+REV-0280,CUST-0173,3,"Product is okay, packaging could have been better.",Neutral,General Inquiry,Android,2026-10-30T12:21:06Z
+REV-0281,CUST-0078,5,Fantastic deals during the festive sale. Super happy!,Positive,None,Web,2026-10-27T16:38:13Z
+REV-0282,CUST-0011,4,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-26T02:18:13Z
+REV-0283,CUST-0043,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-09T14:24:05Z
+REV-0284,CUST-0073,5,"Great customer support, resolved my sizing query instantly.",Positive,None,Android,2026-10-29T16:20:25Z
+REV-0285,CUST-0200,1,App kept crashing when I tried to complete my payment on Android!,Negative,Gateway Timeout,iOS,2026-10-09T17:16:55Z
+REV-0286,CUST-0066,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,App Crash,Android,2026-10-13T15:47:05Z
+REV-0287,CUST-0003,5,Fantastic deals during the festive sale. Super happy!,Positive,None,iOS,2026-10-15T05:12:48Z
+REV-0288,CUST-0157,3,"Product is okay, packaging could have been better.",Neutral,General Inquiry,iOS,2026-10-13T18:41:47Z
+REV-0289,CUST-0160,5,Amazing product quality! Delivery was lightning fast.,Positive,None,Web,2026-10-18T05:15:17Z
+REV-0290,CUST-0027,1,App kept crashing when I tried to complete my payment on Android!,Negative,Payment Failure,Android,2026-10-29T09:04:42Z
+REV-0291,CUST-0034,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,Android,2026-10-19T03:22:04Z
+REV-0292,CUST-0053,3,"Product is okay, packaging could have been better.",Neutral,Delivery Delay,Android,2026-10-06T11:10:29Z
+REV-0293,CUST-0100,5,Smooth checkout experience using UPI. Highly recommended!,Positive,None,iOS,2026-10-13T17:08:53Z
+REV-0294,CUST-0009,3,"Standard shopping experience, nothing extraordinary.",Neutral,Packaging,Android,2026-10-19T05:44:26Z
+REV-0295,CUST-0145,2,App kept crashing when I tried to complete my payment on Android!,Negative,App Crash,Android,2026-10-15T01:57:40Z
+REV-0296,CUST-0158,2,Could not place my order during the flash sale due to payment errors.,Negative,Payment Failure,Android,2026-10-02T02:22:51Z
+REV-0297,CUST-0014,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Gateway Timeout,iOS,2026-10-19T00:24:55Z
+REV-0298,CUST-0022,1,Terrible checkout experience. Kept getting gateway timeout errors.,Negative,Checkout Error,iOS,2026-10-03T15:44:23Z
+REV-0299,CUST-0009,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,Android,2026-10-04T09:55:42Z
+REV-0300,CUST-0060,5,"Really love the new app interface, very smooth and intuitive.",Positive,None,iOS,2026-10-07T07:09:53Z

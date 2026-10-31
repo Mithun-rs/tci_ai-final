@@ -1,0 +1,151 @@
+ticket_id,customer_id,complaint_text,issue_category,priority,ticket_status,resolution_time_hours,timestamp
+TKT-0001,CUST-0173,Package arrived two days later than promised delivery date.,Delivery Problems,Medium,Resolved,20.0,2026-10-22T21:02:05Z
+TKT-0002,CUST-0096,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-20T22:02:38Z
+TKT-0003,CUST-0147,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-16T14:16:56Z
+TKT-0004,CUST-0164,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-24T01:25:59Z
+TKT-0005,CUST-0197,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-03T01:42:08Z
+TKT-0006,CUST-0096,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-23T14:12:42Z
+TKT-0007,CUST-0061,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-09T03:42:32Z
+TKT-0008,CUST-0019,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-03T21:21:15Z
+TKT-0009,CUST-0067,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-21T07:15:11Z
+TKT-0010,CUST-0002,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-18T00:26:11Z
+TKT-0011,CUST-0064,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-30T23:55:59Z
+TKT-0012,CUST-0016,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-03T02:40:13Z
+TKT-0013,CUST-0035,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-12T03:09:25Z
+TKT-0014,CUST-0110,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-14T03:57:55Z
+TKT-0015,CUST-0173,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-26T05:06:51Z
+TKT-0016,CUST-0092,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-15T18:01:34Z
+TKT-0017,CUST-0088,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-06T11:14:46Z
+TKT-0018,CUST-0042,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-08T23:44:57Z
+TKT-0019,CUST-0103,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-03T02:33:05Z
+TKT-0020,CUST-0095,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-16T16:00:14Z
+TKT-0021,CUST-0125,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-16T03:16:40Z
+TKT-0022,CUST-0146,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-03T08:58:36Z
+TKT-0023,CUST-0057,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-02T10:20:33Z
+TKT-0024,CUST-0048,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-29T03:21:23Z
+TKT-0025,CUST-0185,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-15T16:27:09Z
+TKT-0026,CUST-0186,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-27T01:27:11Z
+TKT-0027,CUST-0171,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-26T12:48:57Z
+TKT-0028,CUST-0140,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-05T10:12:32Z
+TKT-0029,CUST-0132,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-25T23:24:21Z
+TKT-0030,CUST-0100,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-03T21:26:20Z
+TKT-0031,CUST-0141,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-14T18:52:19Z
+TKT-0032,CUST-0113,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-11T17:26:55Z
+TKT-0033,CUST-0097,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-18T09:02:12Z
+TKT-0034,CUST-0009,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-27T02:13:38Z
+TKT-0035,CUST-0128,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-24T22:14:37Z
+TKT-0036,CUST-0162,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-07T04:52:55Z
+TKT-0037,CUST-0165,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-05T14:56:11Z
+TKT-0038,CUST-0067,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-24T17:26:08Z
+TKT-0039,CUST-0155,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-22T21:19:57Z
+TKT-0040,CUST-0097,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-06T22:48:14Z
+TKT-0041,CUST-0078,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-29T18:29:09Z
+TKT-0042,CUST-0114,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-06T00:01:36Z
+TKT-0043,CUST-0185,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-13T06:48:50Z
+TKT-0044,CUST-0170,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-02T11:15:12Z
+TKT-0045,CUST-0111,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-04T10:07:11Z
+TKT-0046,CUST-0033,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-07T09:10:37Z
+TKT-0047,CUST-0030,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-23T04:51:12Z
+TKT-0048,CUST-0072,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-28T14:34:43Z
+TKT-0049,CUST-0149,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-22T19:19:20Z
+TKT-0050,CUST-0068,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-22T18:29:51Z
+TKT-0051,CUST-0064,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-06T07:01:22Z
+TKT-0052,CUST-0139,Package arrived two days later than promised delivery date.,Delivery Problems,Medium,Resolved,20.0,2026-10-17T16:37:20Z
+TKT-0053,CUST-0054,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-09T04:15:44Z
+TKT-0054,CUST-0145,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-20T07:35:13Z
+TKT-0055,CUST-0075,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-19T21:18:55Z
+TKT-0056,CUST-0062,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-20T08:40:32Z
+TKT-0057,CUST-0137,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-20T19:34:39Z
+TKT-0058,CUST-0131,Package arrived two days later than promised delivery date.,Delivery Problems,Medium,Resolved,20.0,2026-10-12T10:27:15Z
+TKT-0059,CUST-0160,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-18T17:33:04Z
+TKT-0060,CUST-0045,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-05T12:36:19Z
+TKT-0061,CUST-0114,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-31T07:17:22Z
+TKT-0062,CUST-0003,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-12T20:34:07Z
+TKT-0063,CUST-0083,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-17T05:25:44Z
+TKT-0064,CUST-0114,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-25T02:38:17Z
+TKT-0065,CUST-0095,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-10T07:01:36Z
+TKT-0066,CUST-0057,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-05T09:07:43Z
+TKT-0067,CUST-0185,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-22T13:22:30Z
+TKT-0068,CUST-0118,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-16T22:12:37Z
+TKT-0069,CUST-0113,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-22T02:30:08Z
+TKT-0070,CUST-0057,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-03T14:53:58Z
+TKT-0071,CUST-0021,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-10T13:14:46Z
+TKT-0072,CUST-0158,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-09T12:59:40Z
+TKT-0073,CUST-0169,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-26T03:42:37Z
+TKT-0074,CUST-0008,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-03T07:11:17Z
+TKT-0075,CUST-0126,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-29T17:53:59Z
+TKT-0076,CUST-0179,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-06T17:47:33Z
+TKT-0077,CUST-0143,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-16T13:14:38Z
+TKT-0078,CUST-0075,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-04T03:01:06Z
+TKT-0079,CUST-0128,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-23T15:24:35Z
+TKT-0080,CUST-0120,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-19T09:25:41Z
+TKT-0081,CUST-0059,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-07T23:06:02Z
+TKT-0082,CUST-0107,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-08T21:38:42Z
+TKT-0083,CUST-0016,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-11T18:48:53Z
+TKT-0084,CUST-0181,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-09T02:43:29Z
+TKT-0085,CUST-0063,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-28T02:19:04Z
+TKT-0086,CUST-0066,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-28T17:46:57Z
+TKT-0087,CUST-0168,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-16T03:06:45Z
+TKT-0088,CUST-0093,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-03T15:07:26Z
+TKT-0089,CUST-0140,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-06T08:21:26Z
+TKT-0090,CUST-0168,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-15T15:35:35Z
+TKT-0091,CUST-0043,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-13T04:54:32Z
+TKT-0092,CUST-0199,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-23T14:16:15Z
+TKT-0093,CUST-0077,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-31T06:23:59Z
+TKT-0094,CUST-0010,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-12T01:50:29Z
+TKT-0095,CUST-0035,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-22T18:23:28Z
+TKT-0096,CUST-0047,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-10T10:02:04Z
+TKT-0097,CUST-0165,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-27T13:11:19Z
+TKT-0098,CUST-0140,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-14T13:07:15Z
+TKT-0099,CUST-0120,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-08T14:17:39Z
+TKT-0100,CUST-0168,Package arrived two days later than promised delivery date.,Delivery Problems,Medium,Resolved,20.0,2026-10-20T02:37:03Z
+TKT-0101,CUST-0003,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-29T04:00:57Z
+TKT-0102,CUST-0122,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-31T02:29:51Z
+TKT-0103,CUST-0182,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-04T14:15:40Z
+TKT-0104,CUST-0040,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-16T16:14:00Z
+TKT-0105,CUST-0024,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-19T17:56:16Z
+TKT-0106,CUST-0139,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-10T09:00:09Z
+TKT-0107,CUST-0153,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-24T02:02:54Z
+TKT-0108,CUST-0082,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-09T10:26:18Z
+TKT-0109,CUST-0044,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-19T09:12:57Z
+TKT-0110,CUST-0179,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-30T09:18:05Z
+TKT-0111,CUST-0109,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-28T22:44:27Z
+TKT-0112,CUST-0023,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-31T09:43:56Z
+TKT-0113,CUST-0040,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-31T17:42:59Z
+TKT-0114,CUST-0142,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-03T00:12:23Z
+TKT-0115,CUST-0071,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-13T19:54:36Z
+TKT-0116,CUST-0182,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-15T13:45:27Z
+TKT-0117,CUST-0174,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-04T11:49:32Z
+TKT-0118,CUST-0198,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-22T19:04:29Z
+TKT-0119,CUST-0003,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-30T11:57:07Z
+TKT-0120,CUST-0094,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-12T18:03:06Z
+TKT-0121,CUST-0172,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-21T10:18:02Z
+TKT-0122,CUST-0149,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-02T11:28:09Z
+TKT-0123,CUST-0080,Package arrived two days later than promised delivery date.,Delivery Problems,Medium,Resolved,20.0,2026-10-06T20:29:51Z
+TKT-0124,CUST-0079,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-27T17:42:13Z
+TKT-0125,CUST-0160,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-02T17:34:38Z
+TKT-0126,CUST-0145,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-15T21:54:26Z
+TKT-0127,CUST-0069,Gateway timeout occurred while paying for order checkout.,Payment Issues,Medium,In Progress,0.0,2026-10-28T05:25:22Z
+TKT-0128,CUST-0061,Incorrect item received in delivery. Want an exchange.,Delivery Problems,Medium,Resolved,15.0,2026-10-07T13:09:38Z
+TKT-0129,CUST-0192,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-20T19:18:12Z
+TKT-0130,CUST-0199,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-27T19:28:30Z
+TKT-0131,CUST-0047,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-13T13:06:46Z
+TKT-0132,CUST-0024,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-17T22:15:44Z
+TKT-0133,CUST-0075,Package arrived two days later than promised delivery date.,Delivery Problems,Medium,Resolved,20.0,2026-10-14T18:38:57Z
+TKT-0134,CUST-0058,Package arrived two days later than promised delivery date.,Delivery Problems,Medium,Resolved,20.0,2026-10-22T22:35:57Z
+TKT-0135,CUST-0150,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-18T06:33:10Z
+TKT-0136,CUST-0150,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-25T15:08:16Z
+TKT-0137,CUST-0055,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-20T14:43:38Z
+TKT-0138,CUST-0185,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-24T01:44:50Z
+TKT-0139,CUST-0175,Payment deducted but order status shows failed. Please refund or confirm.,Payment Issues,High,Resolved,12.5,2026-10-17T10:36:35Z
+TKT-0140,CUST-0018,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-28T15:20:37Z
+TKT-0141,CUST-0023,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-13T11:43:38Z
+TKT-0142,CUST-0088,How do I apply my loyalty discount voucher to my cart?,Unrelated Complaints,Low,Resolved,2.0,2026-10-20T13:46:32Z
+TKT-0143,CUST-0085,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-12T23:49:53Z
+TKT-0144,CUST-0006,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-23T03:30:31Z
+TKT-0145,CUST-0157,Password reset link is not arriving in my email inbox.,Unrelated Complaints,Low,Closed,4.0,2026-10-23T06:43:20Z
+TKT-0146,CUST-0124,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-06T03:39:06Z
+TKT-0147,CUST-0075,App crashes every time I click on 'Proceed to Pay' button.,Application Crashes,High,Open,0.0,2026-10-09T03:48:54Z
+TKT-0148,CUST-0136,UPI transaction failed repeatedly with error code 500 on Android app.,Payment Issues,High,Open,0.0,2026-10-21T11:18:26Z
+TKT-0149,CUST-0167,Checkout page freezes when selecting Net Banking option.,Payment Issues,Medium,In Progress,0.0,2026-10-28T03:12:51Z
+TKT-0150,CUST-0057,Refund not yet credited to my bank account after 5 business days.,Refunds,High,Open,0.0,2026-10-24T14:17:04Z

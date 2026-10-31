@@ -1,0 +1,11 @@
+release_id,version,component,deployment_time,change_description,affected_platform,release_status
+REL-101,v2.3.0,Catalog & Search,2026-10-01T02:00:00Z,Optimized search indexing and recommendation algorithms.,All,Successful
+REL-102,v2.3.1,User Profile,2026-10-05T03:30:00Z,Patch for user profile image upload bug.,iOS,Successful
+REL-103,v2.4.0,Payment Module,2026-10-18T01:15:00Z,Upgraded UPI SDK integration and tokenization workflow.,Android,Successful
+REL-104,v2.4.1,Recommendations,2026-10-20T04:00:00Z,Updated homepage banner rendering logic.,Web,Successful
+REL-105,v2.4.2,Checkout Cart,2026-10-22T02:30:00Z,Added dynamic discount code banner during checkout.,All,Successful
+REL-106,v2.4.3,Notification Service,2026-10-24T01:00:00Z,Improved push notification delivery retry logic.,Android,Successful
+REL-107,v2.5.0,Inventory & Logistics,2026-10-26T03:00:00Z,Integrated new fulfillment partner API.,All,Successful
+REL-108,v2.5.1,Wishlist,2026-10-27T02:15:00Z,Bug fix for wishlist item syncing across devices.,iOS,Successful
+REL-109,v2.5.2,Customer Support Bot,2026-10-28T04:30:00Z,Updated NLP intents for automated order tracking.,Web,Successful
+REL-110,v2.5.3,Security & Auth,2026-10-30T01:30:00Z,Enhanced multi-factor authentication token expiry handling.,All,Successful

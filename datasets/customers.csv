@@ -1,0 +1,201 @@
+customer_id,age_group,region,city,customer_type,registration_date,preferred_platform,preferred_payment_method,customer_segment
+CUST-0001,36-50,North,Delhi,Regular,2025-01-05,Android,UPI,Budget Shopper
+CUST-0002,18-25,North,Lucknow,New,2025-04-11,Android,UPI,Loyalist
+CUST-0003,36-50,Central,Raipur,New,2026-04-01,iOS,Net Banking,Budget Shopper
+CUST-0004,18-25,West,Ahmedabad,New,2026-05-11,Android,Net Banking,Budget Shopper
+CUST-0005,18-25,East,Bhubaneswar,Regular,2026-07-14,Web,Card,Loyalist
+CUST-0006,26-35,North,Jaipur,Premium,2025-09-29,iOS,Net Banking,Loyalist
+CUST-0007,26-35,North,Chandigarh,Regular,2026-08-11,Web,Net Banking,Budget Shopper
+CUST-0008,36-50,East,Patna,Regular,2025-07-14,Android,UPI,Budget Shopper
+CUST-0009,26-35,Central,Indore,New,2026-04-29,Android,Wallet,Loyalist
+CUST-0010,26-35,North,Chandigarh,Premium,2025-11-23,Web,Card,Budget Shopper
+CUST-0011,18-25,East,Patna,Regular,2025-03-20,Android,Wallet,Bargain Hunter
+CUST-0012,26-35,South,Hyderabad,Regular,2026-06-01,Android,Card,Frequent Buyer
+CUST-0013,36-50,Central,Raipur,New,2026-06-02,Android,UPI,Tech Enthusiast
+CUST-0014,65+,Central,Bhopal,Regular,2025-08-15,iOS,Card,Frequent Buyer
+CUST-0015,26-35,North,Jaipur,Regular,2026-10-10,Android,UPI,Tech Enthusiast
+CUST-0016,36-50,Central,Indore,Regular,2026-01-25,Android,Card,Loyalist
+CUST-0017,36-50,East,Patna,Regular,2026-05-18,iOS,Card,Budget Shopper
+CUST-0018,26-35,North,Delhi,Premium,2025-06-08,Web,Net Banking,Frequent Buyer
+CUST-0019,36-50,Central,Bhopal,New,2026-02-17,iOS,UPI,Loyalist
+CUST-0020,51-65,West,Pune,New,2026-06-12,Web,Card,Tech Enthusiast
+CUST-0021,26-35,South,Hyderabad,Regular,2024-11-14,iOS,UPI,Loyalist
+CUST-0022,18-25,South,Bangalore,Regular,2026-02-10,iOS,UPI,Tech Enthusiast
+CUST-0023,26-35,North,Chandigarh,New,2025-01-13,Android,UPI,Loyalist
+CUST-0024,26-35,West,Pune,Regular,2024-12-05,iOS,Net Banking,Loyalist
+CUST-0025,26-35,West,Pune,New,2025-06-24,iOS,UPI,Bargain Hunter
+CUST-0026,26-35,North,Delhi,Regular,2026-08-27,Android,Net Banking,Tech Enthusiast
+CUST-0027,26-35,West,Pune,Regular,2025-04-20,Android,UPI,Budget Shopper
+CUST-0028,51-65,North,Delhi,Regular,2025-04-06,iOS,UPI,Budget Shopper
+CUST-0029,26-35,South,Kochi,Regular,2026-02-21,Android,Card,Budget Shopper
+CUST-0030,36-50,West,Ahmedabad,Premium,2026-10-19,iOS,UPI,Loyalist
+CUST-0031,18-25,South,Chennai,New,2025-06-10,Web,Card,Loyalist
+CUST-0032,18-25,North,Delhi,Regular,2025-12-04,iOS,Net Banking,Tech Enthusiast
+CUST-0033,18-25,North,Chandigarh,New,2025-05-19,Android,Net Banking,Bargain Hunter
+CUST-0034,26-35,South,Bangalore,Regular,2025-03-17,Android,Card,Loyalist
+CUST-0035,26-35,South,Hyderabad,New,2026-01-27,Android,Card,Frequent Buyer
+CUST-0036,26-35,North,Lucknow,Regular,2026-08-08,iOS,UPI,Loyalist
+CUST-0037,26-35,South,Hyderabad,Premium,2026-01-23,Web,UPI,Tech Enthusiast
+CUST-0038,51-65,East,Kolkata,Regular,2025-04-13,iOS,Wallet,Budget Shopper
+CUST-0039,36-50,East,Kolkata,Premium,2026-06-06,iOS,UPI,Frequent Buyer
+CUST-0040,18-25,South,Hyderabad,Regular,2025-11-04,Android,Wallet,Budget Shopper
+CUST-0041,26-35,East,Kolkata,New,2025-08-14,iOS,Card,Frequent Buyer
+CUST-0042,36-50,Central,Raipur,Regular,2025-07-26,Android,Wallet,Tech Enthusiast
+CUST-0043,51-65,Central,Indore,Regular,2025-10-08,Android,UPI,Budget Shopper
+CUST-0044,36-50,South,Bangalore,Regular,2026-03-20,iOS,Net Banking,Loyalist
+CUST-0045,36-50,South,Chennai,Premium,2026-02-21,Android,Card,Frequent Buyer
+CUST-0046,51-65,South,Hyderabad,New,2025-08-26,iOS,UPI,Budget Shopper
+CUST-0047,18-25,South,Kochi,Regular,2026-03-08,Web,Net Banking,Tech Enthusiast
+CUST-0048,36-50,West,Ahmedabad,New,2026-04-07,Android,Net Banking,Frequent Buyer
+CUST-0049,36-50,Central,Nagpur,Premium,2025-09-07,Android,Wallet,Tech Enthusiast
+CUST-0050,36-50,North,Delhi,Regular,2026-01-23,Android,Net Banking,Bargain Hunter
+CUST-0051,18-25,North,Lucknow,Premium,2025-05-16,Android,UPI,Bargain Hunter
+CUST-0052,26-35,South,Hyderabad,Regular,2025-04-18,Web,Wallet,Loyalist
+CUST-0053,18-25,East,Bhubaneswar,Regular,2026-06-16,Android,Card,Loyalist
+CUST-0054,26-35,West,Pune,Regular,2025-08-17,Android,Card,Budget Shopper
+CUST-0055,36-50,West,Ahmedabad,Regular,2026-03-20,Android,UPI,Bargain Hunter
+CUST-0056,36-50,North,Jaipur,Regular,2026-05-01,iOS,UPI,Tech Enthusiast
+CUST-0057,26-35,South,Chennai,New,2026-03-05,Android,Card,Budget Shopper
+CUST-0058,36-50,Central,Indore,Regular,2025-01-15,Android,UPI,Tech Enthusiast
+CUST-0059,18-25,North,Lucknow,New,2026-10-16,Web,Card,Bargain Hunter
+CUST-0060,36-50,North,Lucknow,New,2026-02-08,iOS,Card,Loyalist
+CUST-0061,26-35,Central,Raipur,Premium,2025-07-25,iOS,Net Banking,Bargain Hunter
+CUST-0062,26-35,East,Guwahati,Regular,2026-02-10,Android,UPI,Frequent Buyer
+CUST-0063,18-25,East,Kolkata,New,2025-11-12,Android,Card,Tech Enthusiast
+CUST-0064,51-65,East,Guwahati,Regular,2025-08-30,Android,Card,Loyalist
+CUST-0065,51-65,Central,Raipur,Regular,2026-10-01,Web,UPI,Bargain Hunter
+CUST-0066,26-35,Central,Indore,Regular,2025-08-18,Android,Card,Bargain Hunter
+CUST-0067,18-25,West,Pune,Premium,2024-11-25,Web,Wallet,Loyalist
+CUST-0068,18-25,Central,Bhopal,New,2025-09-13,Android,Net Banking,Tech Enthusiast
+CUST-0069,36-50,East,Patna,Regular,2025-09-28,Android,Net Banking,Frequent Buyer
+CUST-0070,26-35,East,Kolkata,Regular,2025-08-16,iOS,UPI,Frequent Buyer
+CUST-0071,26-35,North,Delhi,Premium,2026-08-12,Android,UPI,Tech Enthusiast
+CUST-0072,36-50,North,Chandigarh,Regular,2025-06-24,Android,UPI,Loyalist
+CUST-0073,26-35,South,Hyderabad,New,2026-06-26,Android,UPI,Bargain Hunter
+CUST-0074,51-65,North,Chandigarh,New,2026-04-01,iOS,Net Banking,Loyalist
+CUST-0075,18-25,North,Jaipur,Regular,2025-03-21,iOS,UPI,Frequent Buyer
+CUST-0076,36-50,West,Mumbai,Regular,2025-08-17,Android,Net Banking,Bargain Hunter
+CUST-0077,26-35,South,Hyderabad,Regular,2025-08-02,Web,Net Banking,Bargain Hunter
+CUST-0078,26-35,East,Bhubaneswar,Premium,2025-02-22,Web,UPI,Bargain Hunter
+CUST-0079,26-35,Central,Raipur,Regular,2025-07-03,iOS,UPI,Bargain Hunter
+CUST-0080,36-50,East,Bhubaneswar,Premium,2026-01-30,iOS,UPI,Budget Shopper
+CUST-0081,36-50,North,Chandigarh,Regular,2026-04-09,iOS,Net Banking,Bargain Hunter
+CUST-0082,36-50,West,Mumbai,New,2025-06-06,Android,Card,Frequent Buyer
+CUST-0083,26-35,West,Ahmedabad,Regular,2025-10-09,iOS,UPI,Bargain Hunter
+CUST-0084,26-35,South,Bangalore,Regular,2026-02-06,Android,Card,Tech Enthusiast
+CUST-0085,26-35,East,Bhubaneswar,Premium,2025-06-13,Web,UPI,Frequent Buyer
+CUST-0086,36-50,Central,Indore,New,2026-10-07,Web,Card,Tech Enthusiast
+CUST-0087,65+,North,Delhi,Regular,2025-06-06,iOS,Card,Tech Enthusiast
+CUST-0088,26-35,West,Mumbai,Premium,2026-02-05,Android,UPI,Budget Shopper
+CUST-0089,36-50,East,Kolkata,Premium,2025-03-24,Android,Net Banking,Loyalist
+CUST-0090,26-35,South,Kochi,Regular,2025-01-26,Android,Net Banking,Bargain Hunter
+CUST-0091,26-35,North,Delhi,Premium,2025-01-24,Android,UPI,Budget Shopper
+CUST-0092,26-35,Central,Bhopal,New,2026-04-27,Android,Card,Bargain Hunter
+CUST-0093,36-50,East,Bhubaneswar,Regular,2026-02-26,iOS,Card,Frequent Buyer
+CUST-0094,51-65,Central,Indore,Regular,2025-01-19,iOS,Card,Frequent Buyer
+CUST-0095,26-35,North,Chandigarh,Regular,2026-08-09,iOS,Net Banking,Frequent Buyer
+CUST-0096,36-50,East,Guwahati,Premium,2025-06-29,iOS,Card,Budget Shopper
+CUST-0097,36-50,East,Bhubaneswar,New,2025-08-05,Android,Card,Loyalist
+CUST-0098,51-65,East,Kolkata,Regular,2026-09-30,Android,Card,Bargain Hunter
+CUST-0099,26-35,Central,Raipur,Regular,2026-04-19,iOS,UPI,Frequent Buyer
+CUST-0100,51-65,North,Chandigarh,Regular,2025-11-27,iOS,UPI,Bargain Hunter
+CUST-0101,51-65,North,Lucknow,New,2025-04-06,Android,UPI,Bargain Hunter
+CUST-0102,36-50,Central,Raipur,Regular,2026-10-20,Android,UPI,Bargain Hunter
+CUST-0103,18-25,South,Hyderabad,Regular,2026-08-30,Web,Card,Bargain Hunter
+CUST-0104,18-25,Central,Indore,Regular,2025-01-14,Android,UPI,Bargain Hunter
+CUST-0105,36-50,West,Mumbai,Regular,2026-06-27,Android,Wallet,Frequent Buyer
+CUST-0106,26-35,West,Surat,Premium,2026-01-15,Android,Card,Bargain Hunter
+CUST-0107,26-35,Central,Indore,Premium,2025-02-15,Android,Net Banking,Bargain Hunter
+CUST-0108,51-65,East,Kolkata,New,2025-05-20,Android,Card,Bargain Hunter
+CUST-0109,51-65,Central,Raipur,Regular,2025-07-21,iOS,Card,Bargain Hunter
+CUST-0110,36-50,South,Kochi,New,2026-04-11,iOS,UPI,Bargain Hunter
+CUST-0111,26-35,West,Pune,Regular,2025-09-26,Android,Card,Loyalist
+CUST-0112,51-65,West,Mumbai,Regular,2026-07-11,iOS,Card,Bargain Hunter
+CUST-0113,36-50,North,Lucknow,Regular,2026-05-16,Android,Card,Bargain Hunter
+CUST-0114,51-65,Central,Raipur,Premium,2025-11-19,iOS,Net Banking,Bargain Hunter
+CUST-0115,36-50,Central,Bhopal,New,2026-09-15,iOS,UPI,Tech Enthusiast
+CUST-0116,26-35,North,Delhi,Regular,2025-08-03,iOS,Wallet,Budget Shopper
+CUST-0117,36-50,East,Bhubaneswar,Regular,2026-08-25,Android,Card,Loyalist
+CUST-0118,26-35,South,Chennai,New,2026-04-20,Web,Card,Tech Enthusiast
+CUST-0119,51-65,South,Chennai,Regular,2025-03-03,Android,UPI,Budget Shopper
+CUST-0120,36-50,East,Patna,New,2025-07-02,Web,Wallet,Frequent Buyer
+CUST-0121,18-25,East,Guwahati,Premium,2025-08-13,Android,UPI,Bargain Hunter
+CUST-0122,26-35,Central,Nagpur,Regular,2025-09-26,Web,UPI,Bargain Hunter
+CUST-0123,36-50,North,Lucknow,Premium,2025-03-21,Web,Net Banking,Tech Enthusiast
+CUST-0124,36-50,South,Chennai,Regular,2025-10-26,iOS,Card,Tech Enthusiast
+CUST-0125,18-25,North,Jaipur,Regular,2025-01-17,Android,UPI,Tech Enthusiast
+CUST-0126,36-50,East,Guwahati,New,2025-12-23,Android,Card,Frequent Buyer
+CUST-0127,36-50,South,Hyderabad,Premium,2026-01-15,Web,Wallet,Frequent Buyer
+CUST-0128,65+,North,Lucknow,Premium,2025-11-09,Android,Wallet,Bargain Hunter
+CUST-0129,26-35,East,Kolkata,Regular,2025-03-30,Android,Card,Bargain Hunter
+CUST-0130,26-35,East,Guwahati,Premium,2024-12-02,Web,UPI,Tech Enthusiast
+CUST-0131,51-65,Central,Nagpur,Premium,2025-01-25,Android,UPI,Bargain Hunter
+CUST-0132,18-25,West,Mumbai,New,2025-12-16,Web,UPI,Bargain Hunter
+CUST-0133,26-35,Central,Indore,Regular,2026-02-23,Android,Wallet,Loyalist
+CUST-0134,18-25,West,Mumbai,Premium,2026-05-16,iOS,Wallet,Frequent Buyer
+CUST-0135,36-50,South,Kochi,Regular,2025-10-07,Android,UPI,Frequent Buyer
+CUST-0136,18-25,East,Kolkata,Regular,2024-12-30,Android,UPI,Bargain Hunter
+CUST-0137,26-35,Central,Bhopal,New,2026-03-18,Android,Wallet,Loyalist
+CUST-0138,18-25,South,Chennai,Premium,2025-04-02,Android,Net Banking,Loyalist
+CUST-0139,18-25,South,Hyderabad,Regular,2026-05-26,Android,Net Banking,Tech Enthusiast
+CUST-0140,36-50,Central,Nagpur,New,2026-02-20,Android,UPI,Bargain Hunter
+CUST-0141,26-35,West,Surat,Regular,2026-08-17,iOS,UPI,Loyalist
+CUST-0142,51-65,North,Jaipur,Regular,2025-01-30,Web,UPI,Bargain Hunter
+CUST-0143,36-50,North,Lucknow,Regular,2025-08-11,Android,Net Banking,Frequent Buyer
+CUST-0144,65+,South,Hyderabad,Regular,2026-08-15,iOS,Card,Bargain Hunter
+CUST-0145,51-65,East,Guwahati,Regular,2025-04-26,Android,Net Banking,Budget Shopper
+CUST-0146,26-35,Central,Indore,Regular,2024-12-24,Web,Card,Bargain Hunter
+CUST-0147,18-25,East,Guwahati,Regular,2026-07-16,Android,Wallet,Bargain Hunter
+CUST-0148,18-25,North,Lucknow,New,2026-07-26,iOS,Net Banking,Loyalist
+CUST-0149,51-65,Central,Nagpur,Regular,2025-03-25,Android,Net Banking,Bargain Hunter
+CUST-0150,26-35,East,Bhubaneswar,Regular,2026-08-30,iOS,UPI,Bargain Hunter
+CUST-0151,51-65,East,Bhubaneswar,New,2026-07-03,Android,UPI,Bargain Hunter
+CUST-0152,26-35,Central,Bhopal,Regular,2025-01-23,iOS,Card,Budget Shopper
+CUST-0153,18-25,East,Bhubaneswar,Regular,2024-11-01,Android,UPI,Bargain Hunter
+CUST-0154,26-35,North,Delhi,Regular,2025-01-11,Android,Card,Frequent Buyer
+CUST-0155,36-50,East,Kolkata,Premium,2025-12-06,Android,Net Banking,Budget Shopper
+CUST-0156,18-25,West,Surat,Regular,2026-01-16,Android,UPI,Loyalist
+CUST-0157,18-25,North,Jaipur,Regular,2025-08-07,iOS,Card,Frequent Buyer
+CUST-0158,36-50,Central,Bhopal,New,2025-09-12,Android,UPI,Tech Enthusiast
+CUST-0159,36-50,East,Kolkata,New,2025-12-29,iOS,UPI,Bargain Hunter
+CUST-0160,26-35,Central,Nagpur,New,2026-02-28,Web,UPI,Budget Shopper
+CUST-0161,26-35,East,Guwahati,Regular,2026-08-03,iOS,Card,Budget Shopper
+CUST-0162,26-35,South,Kochi,Premium,2025-11-23,Web,UPI,Budget Shopper
+CUST-0163,36-50,West,Mumbai,Regular,2025-02-25,Android,UPI,Frequent Buyer
+CUST-0164,36-50,Central,Bhopal,Regular,2026-08-04,Android,Net Banking,Frequent Buyer
+CUST-0165,36-50,South,Chennai,New,2024-12-30,Android,UPI,Tech Enthusiast
+CUST-0166,36-50,North,Chandigarh,Premium,2024-12-19,iOS,Card,Loyalist
+CUST-0167,26-35,Central,Nagpur,Premium,2025-07-19,iOS,UPI,Budget Shopper
+CUST-0168,26-35,East,Bhubaneswar,Regular,2025-01-13,Android,UPI,Bargain Hunter
+CUST-0169,36-50,East,Bhubaneswar,New,2026-08-24,Web,Net Banking,Loyalist
+CUST-0170,36-50,West,Mumbai,Regular,2025-09-23,Web,Card,Frequent Buyer
+CUST-0171,36-50,South,Bangalore,Regular,2025-05-26,Web,Net Banking,Budget Shopper
+CUST-0172,26-35,North,Chandigarh,Regular,2026-04-28,Web,Card,Loyalist
+CUST-0173,18-25,East,Guwahati,Regular,2025-10-05,Android,Card,Frequent Buyer
+CUST-0174,51-65,Central,Raipur,New,2026-07-17,iOS,Card,Loyalist
+CUST-0175,18-25,North,Chandigarh,Premium,2025-11-14,Android,Card,Bargain Hunter
+CUST-0176,18-25,East,Guwahati,Regular,2026-07-27,Android,UPI,Loyalist
+CUST-0177,51-65,West,Ahmedabad,New,2024-12-04,Android,Wallet,Frequent Buyer
+CUST-0178,36-50,South,Chennai,Premium,2025-06-11,Android,UPI,Budget Shopper
+CUST-0179,26-35,Central,Bhopal,Regular,2025-04-17,Web,Card,Loyalist
+CUST-0180,65+,South,Chennai,Regular,2026-05-08,Android,UPI,Tech Enthusiast
+CUST-0181,51-65,East,Guwahati,New,2025-02-03,Android,Wallet,Bargain Hunter
+CUST-0182,26-35,East,Guwahati,Regular,2026-04-06,Android,UPI,Loyalist
+CUST-0183,36-50,South,Chennai,Premium,2026-05-09,Android,Card,Frequent Buyer
+CUST-0184,18-25,Central,Bhopal,New,2026-07-08,iOS,UPI,Loyalist
+CUST-0185,18-25,North,Chandigarh,Premium,2025-07-31,Web,Wallet,Bargain Hunter
+CUST-0186,51-65,East,Patna,Regular,2025-05-25,Android,UPI,Frequent Buyer
+CUST-0187,36-50,East,Patna,New,2024-12-25,Android,Net Banking,Tech Enthusiast
+CUST-0188,36-50,West,Mumbai,Premium,2025-06-28,Android,UPI,Tech Enthusiast
+CUST-0189,26-35,Central,Raipur,New,2025-02-05,Android,UPI,Budget Shopper
+CUST-0190,18-25,Central,Raipur,New,2025-01-05,Web,Card,Loyalist
+CUST-0191,26-35,Central,Indore,Regular,2025-05-12,Android,UPI,Frequent Buyer
+CUST-0192,36-50,South,Bangalore,Regular,2025-08-21,Android,Wallet,Loyalist
+CUST-0193,26-35,Central,Bhopal,Regular,2025-05-20,iOS,Card,Frequent Buyer
+CUST-0194,36-50,East,Kolkata,Regular,2026-10-05,iOS,Card,Loyalist
+CUST-0195,65+,South,Bangalore,Regular,2025-11-15,Android,Card,Bargain Hunter
+CUST-0196,26-35,South,Chennai,New,2025-06-18,iOS,Card,Frequent Buyer
+CUST-0197,26-35,North,Jaipur,Premium,2026-03-31,iOS,Wallet,Loyalist
+CUST-0198,26-35,South,Hyderabad,Regular,2026-09-14,iOS,Net Banking,Frequent Buyer
+CUST-0199,26-35,West,Surat,Regular,2025-10-10,Web,UPI,Tech Enthusiast
+CUST-0200,65+,East,Bhubaneswar,Premium,2025-05-30,iOS,UPI,Loyalist
