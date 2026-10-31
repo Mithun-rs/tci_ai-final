@@ -77,23 +77,6 @@ export const App: React.FC = () => {
         />
 
         <main className="flex-1 max-w-screen-2xl w-full mx-auto px-6 lg:px-10 py-6 space-y-6">
-          {/* Workspace Context Bar */}
-          {selectedCompany && (
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200/80 text-xs">
-              <div className="flex items-center space-x-3 text-slate-600">
-                <span className="font-bold text-slate-900 text-sm">{selectedCompany.name}</span>
-                <span>&bull;</span>
-                <span className="font-semibold text-slate-700">{selectedCompany.industry}</span>
-                <span className="hidden md:inline">&bull;</span>
-                <span className="text-slate-500 hidden md:inline">{selectedCompany.description}</span>
-              </div>
-              <div className="mt-2 sm:mt-0 flex items-center space-x-2 text-slate-500 font-medium">
-                <span>Active Console:</span>
-                <span className="text-slate-900 font-bold uppercase">{currentRole.replace('_', ' ')}</span>
-              </div>
-            </div>
-          )}
-
           {/* View Selection */}
           {currentRole === 'cx_manager' && (
             <CXManagerDashboard companyId={selectedCompanyId} />
@@ -119,8 +102,6 @@ export const App: React.FC = () => {
               <a href="#privacy" className="hover:text-slate-800 transition-colors">Privacy</a>
               <span>&bull;</span>
               <a href="#terms" className="hover:text-slate-800 transition-colors">Terms</a>
-              <span>&bull;</span>
-              <a href="#status" className="hover:text-slate-800 transition-colors">System Health: 99.98%</a>
             </div>
           </div>
         </footer>

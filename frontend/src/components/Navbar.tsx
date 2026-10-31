@@ -105,10 +105,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={onResetData}
             disabled={isResetting}
             title="Reset to baseline scenario"
-            className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 rounded-lg border border-slate-200 transition-colors shadow-sm disabled:opacity-50"
+            className="p-2 text-xs font-medium text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 rounded-lg border border-slate-200 transition-colors shadow-sm disabled:opacity-50"
           >
             <RefreshCw className={`w-3.5 h-3.5 text-slate-500 ${isResetting ? 'animate-spin' : ''}`} />
-            <span className="hidden sm:inline">Reset Baseline</span>
           </button>
 
           <div className="h-8 w-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-semibold shadow-sm">

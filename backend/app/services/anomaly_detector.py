@@ -127,9 +127,11 @@ class AnomalyDetector:
 
     def get_realtime_telemetry(self, company_id: str, incident_id: Optional[str] = None, time_range: str = "6h", count: int = 10) -> Dict[str, Any]:
         """
-        Generates dynamic sliding-window telemetry points reflecting current real-time operational status.
-        If incident is resolved/recovering, telemetry smoothly returns to baseline.
-        If incident is active, telemetry reflects elevated retry burst and latency spike.
+        Returns static, deterministic telemetry curves for the specified time range (1h, 6h, 24h).
+        Accurately reflects operational health without random jitter or fluctuating noise:
+        - Investigating/Degraded: Clear escalation to ~39% retry rate / 4450ms latency.
+        - Approved: Mid-transition stabilizing curve.
+        - Resolved: Clean recovery drop back to healthy baseline (4.2%).
         """
         from app.models.db_models import CXIncident
         
@@ -141,65 +143,65 @@ class AnomalyDetector:
 
         is_recovered = incident.status == "resolved" if incident else False
         is_approved = incident.status == "approved" if incident else False
-
-        now = datetime.utcnow()
-        points = []
         baseline_val = 4.2
 
-        # Select interval step according to time_range
+        # Deterministic static timeline datasets for each time range
         if time_range == "1h":
-            step = timedelta(minutes=6)
-        elif time_range == "24h":
-            step = timedelta(hours=2)
-        else: # "6h" default
-            step = timedelta(minutes=36)
-
-        for i in range(count - 1, -1, -1):
-            point_time = now - (step * i)
-            time_str = point_time.strftime("%H:%M")
-
-            # Determine curve progression
+            # 1-Hour Window: 10-minute snapshot intervals focusing on peak operational period
+            timestamps = ["15:00", "15:10", "15:20", "15:30", "15:40", "15:50", "16:00"]
             if is_recovered:
-                # If recovered, recent 4 points recover down to healthy levels
-                if i < 4:
-                    actual = round(baseline_val + np.random.uniform(-0.5, 0.7), 2)
-                    latency = int(np.random.uniform(180, 240))
-                    is_anomaly = False
-                else:
-                    actual = round(28.0 + np.random.uniform(5.0, 11.0), 2)
-                    latency = int(np.random.uniform(3600, 4800))
-                    is_anomaly = True
+                actuals = [38.6, 32.4, 23.5, 15.2, 8.4, 4.8, 4.3]
+                latencies = [4200, 3500, 2600, 1750, 920, 270, 215]
+                anomalies = [True, True, True, True, False, False, False]
             elif is_approved:
-                # Mid-transition post manager approval
-                if i < 2:
-                    actual = round(14.5 + np.random.uniform(-1.5, 2.0), 2)
-                    latency = int(np.random.uniform(1100, 1900))
-                    is_anomaly = False
-                else:
-                    actual = round(34.0 + np.random.uniform(2.0, 7.0), 2)
-                    latency = int(np.random.uniform(3800, 4600))
-                    is_anomaly = True
-            else:
-                # Degraded active anomaly state
-                if i > 7:
-                    actual = round(baseline_val + np.random.uniform(-0.4, 0.9), 2)
-                    latency = int(np.random.uniform(190, 250))
-                    is_anomaly = False
-                elif i > 4:
-                    actual = round(16.0 + np.random.uniform(2.0, 8.0), 2)
-                    latency = int(np.random.uniform(1400, 2800))
-                    is_anomaly = True
-                else:
-                    actual = round(37.5 + np.random.uniform(1.2, 5.8), 2)
-                    latency = int(np.random.uniform(3900, 4900))
-                    is_anomaly = True
+                actuals = [38.6, 35.2, 31.8, 26.5, 21.2, 16.8, 14.5]
+                latencies = [4200, 3900, 3500, 2950, 2350, 1820, 1500]
+                anomalies = [True, True, True, True, False, False, False]
+            else: # Investigating / active anomaly
+                actuals = [38.6, 37.9, 38.8, 36.2, 37.4, 38.5, 39.1]
+                latencies = [4200, 4150, 4280, 4100, 4280, 4390, 4450]
+                anomalies = [True, True, True, True, True, True, True]
 
+        elif time_range == "24h":
+            # 24-Hour Window: 2-hour snapshot intervals showing diurnal cycle and incident window
+            timestamps = ["18:00", "20:00", "22:00", "00:00", "02:00", "04:00", "06:00", "08:00", "10:00", "12:00", "14:00", "16:00"]
+            if is_recovered:
+                actuals = [4.1, 4.3, 3.9, 3.8, 3.5, 3.6, 4.0, 4.2, 4.4, 4.6, 8.2, 4.3]
+                latencies = [210, 220, 190, 185, 175, 180, 200, 215, 230, 245, 510, 215]
+                anomalies = [False, False, False, False, False, False, False, False, False, False, False, False]
+            elif is_approved:
+                actuals = [4.1, 4.3, 3.9, 3.8, 3.5, 3.6, 4.0, 4.2, 4.4, 4.6, 8.2, 14.5]
+                latencies = [210, 220, 190, 185, 175, 180, 200, 215, 230, 245, 510, 1500]
+                anomalies = [False, False, False, False, False, False, False, False, False, False, False, False]
+            else: # Investigating / active anomaly
+                actuals = [4.1, 4.3, 3.9, 3.8, 3.5, 3.6, 4.0, 4.2, 4.4, 4.6, 8.2, 39.1]
+                latencies = [210, 220, 190, 185, 175, 180, 200, 215, 230, 245, 510, 4450]
+                anomalies = [False, False, False, False, False, False, False, False, False, False, False, True]
+
+        else: # "6h" default
+            # 6-Hour Window: 30-minute intervals showing normal baseline -> early anomaly -> surge
+            timestamps = ["13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00"]
+            if is_recovered:
+                actuals = [4.5, 4.8, 8.2, 21.4, 38.6, 12.0, 4.3]
+                latencies = [220, 240, 510, 1950, 4200, 1100, 215]
+                anomalies = [False, False, False, True, True, False, False]
+            elif is_approved:
+                actuals = [4.5, 4.8, 8.2, 21.4, 38.6, 25.0, 14.5]
+                latencies = [220, 240, 510, 1950, 4200, 2800, 1500]
+                anomalies = [False, False, False, True, True, False, False]
+            else: # Investigating / active anomaly
+                actuals = [4.5, 4.8, 8.2, 21.4, 38.6, 36.2, 39.1]
+                latencies = [220, 240, 510, 1950, 4200, 4100, 4450]
+                anomalies = [False, False, False, True, True, True, True]
+
+        points = []
+        for t, act, lat, anom in zip(timestamps, actuals, latencies, anomalies):
             points.append({
-                "time": time_str,
+                "time": t,
                 "baseline": baseline_val,
-                "actual": max(1.0, actual),
-                "latency_ms": latency,
-                "is_anomaly": is_anomaly
+                "actual": act,
+                "latency_ms": lat,
+                "is_anomaly": anom
             })
 
         latest_point = points[-1]
@@ -215,5 +217,5 @@ class AnomalyDetector:
             "current_latency_ms": latest_point["latency_ms"],
             "spike_percentage": spike_pct,
             "points": points,
-            "timestamp": now.isoformat()
+            "timestamp": "2026-10-31T16:00:00Z"
         }
