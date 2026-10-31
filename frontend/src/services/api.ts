@@ -12,9 +12,25 @@ export const api = {
     return res.json();
   },
 
-  // Signals
+  // Signals & Real-Time Telemetry
   getSignals: async (companyId: string) => {
     const res = await fetch(`${API_BASE_URL}/signals?company_id=${companyId}`);
+    return res.json();
+  },
+
+  getRealtimeTelemetry: async (companyId: string, incidentId?: string, timeRange: string = '6h', pointsCount = 10) => {
+    let url = `${API_BASE_URL}/signals/telemetry-stream?company_id=${encodeURIComponent(companyId)}&time_range=${timeRange}&points_count=${pointsCount}`;
+    if (incidentId) {
+      url += `&incident_id=${encodeURIComponent(incidentId)}`;
+    }
+    const res = await fetch(url);
+    return res.json();
+  },
+
+  simulateBurst: async (companyId: string) => {
+    const res = await fetch(`${API_BASE_URL}/signals/simulate-burst?company_id=${encodeURIComponent(companyId)}`, {
+      method: 'POST'
+    });
     return res.json();
   },
 

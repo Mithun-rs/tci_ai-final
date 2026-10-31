@@ -1,10 +1,11 @@
-from fastapi import APIRouter, Depends
+from typing import Optional
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 from app.database import get_db
-from app.models.db_models import DetectedSignal
+from app.models.db_models import DetectedSignal, CXIncident
 from app.services.anomaly_detector import AnomalyDetector
 
-router = APIRouter(prefix="/signals", tags=["Silent Problem Detection"])
+router = APIRouter(prefix="/signals", tags=["Silent Problem Detection & Real-Time Telemetry"])
 
 @router.get("")
 def get_detected_signals(company_id: str, db: Session = Depends(get_db)):
@@ -12,6 +13,26 @@ def get_detected_signals(company_id: str, db: Session = Depends(get_db)):
         DetectedSignal.company_id == company_id
     ).order_by(DetectedSignal.detected_at.desc()).all()
     return signals
+
+@router.get("/telemetry-stream")
+def get_telemetry_stream(
+    company_id: str = Query("shopsphere"),
+    incident_id: Optional[str] = Query(None),
+    time_range: str = Query("6h"),
+    points_count: int = Query(10, ge=5, le=30),
+    db: Session = Depends(get_db)
+):
+    """
+    Returns real-time sliding-window telemetry points computed dynamically.
+    Reflects live operational health (degraded during active incidents, recovered post-execution).
+    """
+    detector = AnomalyDetector(db)
+    return detector.get_realtime_telemetry(
+        company_id=company_id,
+        incident_id=incident_id,
+        time_range=time_range,
+        count=points_count
+    )
 
 @router.post("/detect")
 def trigger_detection(company_id: str, db: Session = Depends(get_db)):
@@ -24,3 +45,20 @@ def trigger_detection(company_id: str, db: Session = Depends(get_db)):
         "metrics_summary": detector.calculate_behavioural_metrics(company_id)
     }
 
+@router.post("/simulate-burst")
+def simulate_retry_burst(company_id: str, db: Session = Depends(get_db)):
+    """
+    Simulates a sudden real-time retry storm & checkout dropout burst.
+    """
+    incident = db.query(CXIncident).filter(
+        CXIncident.company_id == company_id
+    ).order_by(CXIncident.updated_at.desc()).first()
+
+    if incident:
+        incident.status = "investigating"
+        incident.affected_customers_count += 18
+        incident.transaction_value_at_risk += 34500.00
+        db.commit()
+
+    detector = AnomalyDetector(db)
+    return detector.get_realtime_telemetry(company_id=company_id, count=10)

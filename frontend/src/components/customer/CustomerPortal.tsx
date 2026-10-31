@@ -39,6 +39,10 @@ export const CustomerPortal: React.FC<CustomerPortalProps> = ({ companyId }) => 
 
   useEffect(() => {
     loadComplaints();
+    const interval = setInterval(() => {
+      loadComplaints();
+    }, 4000);
+    return () => clearInterval(interval);
   }, [companyId]);
 
   const handleSubmit = async (e: React.FormEvent) => {

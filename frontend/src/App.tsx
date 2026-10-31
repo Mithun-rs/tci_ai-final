@@ -12,6 +12,24 @@ export const App: React.FC = () => {
   const [selectedCompanyId, setSelectedCompanyId] = useState<string>('shopsphere');
   const [currentRole, setCurrentRole] = useState<UserRole>('cx_manager');
   const [isResetting, setIsResetting] = useState<boolean>(false);
+  const [activeAlertCount, setActiveAlertCount] = useState<number>(3);
+
+  const fetchAlertCount = async () => {
+    try {
+      const sigs = await api.getSignals(selectedCompanyId);
+      if (Array.isArray(sigs)) {
+        setActiveAlertCount(sigs.length);
+      }
+    } catch (err) {
+      // quiet fallback
+    }
+  };
+
+  useEffect(() => {
+    fetchAlertCount();
+    const interval = setInterval(fetchAlertCount, 4000);
+    return () => clearInterval(interval);
+  }, [selectedCompanyId]);
 
   const fetchCompanies = async () => {
     try {
@@ -55,10 +73,10 @@ export const App: React.FC = () => {
           onSelectRole={setCurrentRole}
           onResetData={handleResetData}
           isResetting={isResetting}
-          activeAlertCount={1}
+          activeAlertCount={activeAlertCount}
         />
 
-        <main className="flex-1 max-w-7xl w-full mx-auto p-6 space-y-6">
+        <main className="flex-1 max-w-screen-2xl w-full mx-auto px-6 lg:px-10 py-6 space-y-6">
           {/* Workspace Context Bar */}
           {selectedCompany && (
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200/80 text-xs">
@@ -91,8 +109,8 @@ export const App: React.FC = () => {
         </main>
 
         {/* Enterprise SaaS Footer */}
-        <footer className="border-t border-slate-200/80 bg-white py-4 px-6 text-xs text-slate-500">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+        <footer className="border-t border-slate-200/80 bg-white py-4 px-6 lg:px-10 text-xs text-slate-500">
+          <div className="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
             <div className="flex items-center space-x-4">
               <span className="font-bold text-slate-800">CX Pulse</span>
               <span>Customer Experience Predictive Understanding & Strategic Evaluation</span>

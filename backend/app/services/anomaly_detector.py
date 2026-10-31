@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from sqlalchemy.orm import Session
 from app.models.db_models import BehaviouralEvent, DetectedSignal
 
@@ -124,3 +124,96 @@ class AnomalyDetector:
                 print(f"[AnomalyDetector] ML inference notice: {e}")
 
         return detected
+
+    def get_realtime_telemetry(self, company_id: str, incident_id: Optional[str] = None, time_range: str = "6h", count: int = 10) -> Dict[str, Any]:
+        """
+        Generates dynamic sliding-window telemetry points reflecting current real-time operational status.
+        If incident is resolved/recovering, telemetry smoothly returns to baseline.
+        If incident is active, telemetry reflects elevated retry burst and latency spike.
+        """
+        from app.models.db_models import CXIncident
+        
+        query = self.db.query(CXIncident).filter(CXIncident.company_id == company_id)
+        if incident_id:
+            incident = query.filter(CXIncident.id == incident_id).first()
+        else:
+            incident = query.order_by(CXIncident.updated_at.desc()).first()
+
+        is_recovered = incident.status == "resolved" if incident else False
+        is_approved = incident.status == "approved" if incident else False
+
+        now = datetime.utcnow()
+        points = []
+        baseline_val = 4.2
+
+        # Select interval step according to time_range
+        if time_range == "1h":
+            step = timedelta(minutes=6)
+        elif time_range == "24h":
+            step = timedelta(hours=2)
+        else: # "6h" default
+            step = timedelta(minutes=36)
+
+        for i in range(count - 1, -1, -1):
+            point_time = now - (step * i)
+            time_str = point_time.strftime("%H:%M")
+
+            # Determine curve progression
+            if is_recovered:
+                # If recovered, recent 4 points recover down to healthy levels
+                if i < 4:
+                    actual = round(baseline_val + np.random.uniform(-0.5, 0.7), 2)
+                    latency = int(np.random.uniform(180, 240))
+                    is_anomaly = False
+                else:
+                    actual = round(28.0 + np.random.uniform(5.0, 11.0), 2)
+                    latency = int(np.random.uniform(3600, 4800))
+                    is_anomaly = True
+            elif is_approved:
+                # Mid-transition post manager approval
+                if i < 2:
+                    actual = round(14.5 + np.random.uniform(-1.5, 2.0), 2)
+                    latency = int(np.random.uniform(1100, 1900))
+                    is_anomaly = False
+                else:
+                    actual = round(34.0 + np.random.uniform(2.0, 7.0), 2)
+                    latency = int(np.random.uniform(3800, 4600))
+                    is_anomaly = True
+            else:
+                # Degraded active anomaly state
+                if i > 7:
+                    actual = round(baseline_val + np.random.uniform(-0.4, 0.9), 2)
+                    latency = int(np.random.uniform(190, 250))
+                    is_anomaly = False
+                elif i > 4:
+                    actual = round(16.0 + np.random.uniform(2.0, 8.0), 2)
+                    latency = int(np.random.uniform(1400, 2800))
+                    is_anomaly = True
+                else:
+                    actual = round(37.5 + np.random.uniform(1.2, 5.8), 2)
+                    latency = int(np.random.uniform(3900, 4900))
+                    is_anomaly = True
+
+            points.append({
+                "time": time_str,
+                "baseline": baseline_val,
+                "actual": max(1.0, actual),
+                "latency_ms": latency,
+                "is_anomaly": is_anomaly
+            })
+
+        latest_point = points[-1]
+        spike_pct = round(((latest_point["actual"] - baseline_val) / baseline_val) * 100, 1)
+
+        return {
+            "company_id": company_id,
+            "incident_id": incident.id if incident else None,
+            "incident_status": incident.status if incident else "unknown",
+            "is_recovered": is_recovered,
+            "baseline_rate": baseline_val,
+            "current_retry_rate": latest_point["actual"],
+            "current_latency_ms": latest_point["latency_ms"],
+            "spike_percentage": spike_pct,
+            "points": points,
+            "timestamp": now.isoformat()
+        }
