@@ -5,8 +5,7 @@ import { useToast } from '../common/Toast';
 import {
   AlertTriangle, CheckCircle2, Sliders, Shield,
   DollarSign, Users, Play, Check, X, ArrowUpRight,
-  CheckCheck, ChevronDown, ChevronUp, Search, Activity,
-  Zap, RefreshCw
+  CheckCheck, ChevronDown, ChevronUp, Search, Activity
 } from 'lucide-react';
 
 interface CXManagerDashboardProps {
@@ -36,9 +35,6 @@ export const CXManagerDashboard: React.FC<CXManagerDashboardProps> = ({ companyI
 
   const [executingActionId, setExecutingActionId] = useState<string | null>(null);
   const [approvalModalAction, setApprovalModalAction] = useState<RecoveryAction | null>(null);
-  const [isRealtimeActive, setIsRealtimeActive] = useState<boolean>(true);
-  const [isSimulatingBurst, setIsSimulatingBurst] = useState<boolean>(false);
-  const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
 
   const loadData = async () => {
     try {
@@ -83,40 +79,19 @@ export const CXManagerDashboard: React.FC<CXManagerDashboardProps> = ({ companyI
     }
   };
 
-  const handleManualRefresh = async () => {
-    setIsRefreshing(true);
-    await refreshDataSilently();
-    showToast('Real-time data refreshed');
-    setIsRefreshing(false);
-  };
-
-  const handleSimulateBurst = async () => {
-    setIsSimulatingBurst(true);
-    try {
-      await api.simulateBurst(companyId);
-      showToast('Real-time retry burst and checkout dropout spike simulated!', 'info');
-      await refreshDataSilently();
-    } catch (err) {
-      console.error(err);
-      showToast('Burst simulation failed', 'error');
-    } finally {
-      setIsSimulatingBurst(false);
-    }
-  };
-
   useEffect(() => {
     loadData();
   }, [companyId]);
 
-  // Real-time polling every 3.5 seconds
+  // Background refresh every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      if (isRealtimeActive && !executingActionId) {
+      if (!executingActionId) {
         refreshDataSilently();
       }
-    }, 3500);
+    }, 5000);
     return () => clearInterval(interval);
-  }, [companyId, selectedIncident?.id, isRealtimeActive, executingActionId]);
+  }, [companyId, selectedIncident?.id, executingActionId]);
 
   const handleSelectIncident = async (incident: CXIncident) => {
     setSelectedIncident(incident);
@@ -214,40 +189,6 @@ export const CXManagerDashboard: React.FC<CXManagerDashboardProps> = ({ companyI
 
   return (
     <div className="space-y-6">
-      {/* Live Stream & Action Header Bar */}
-      <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div className="flex items-center space-x-3">
-          <div className="flex items-center space-x-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="text-xs font-semibold text-slate-800">Operational Real-Time Feed</span>
-          </div>
-          <span className="text-slate-300 hidden sm:inline">&bull;</span>
-          <span className="text-xs text-slate-500 hidden sm:inline">Automatic 3.5s dynamic sync</span>
-        </div>
-
-        <div className="flex items-center space-x-2.5">
-          <button
-            onClick={handleSimulateBurst}
-            disabled={isSimulatingBurst}
-            className="flex items-center space-x-1.5 text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200/80 px-2.5 py-1.5 rounded-lg hover:bg-rose-100/80 active:scale-95 transition-all shadow-sm"
-            title="Simulate sudden real-time payment retry storm and checkout dropouts"
-          >
-            <Zap className={`w-3.5 h-3.5 ${isSimulatingBurst ? 'animate-bounce' : ''}`} />
-            <span>{isSimulatingBurst ? 'Simulating Burst...' : 'Simulate Anomaly Burst'}</span>
-          </button>
-
-          <button
-            onClick={handleManualRefresh}
-            disabled={isRefreshing}
-            className="flex items-center space-x-1.5 text-xs font-medium text-slate-700 bg-slate-50 border border-slate-200 px-2.5 py-1.5 rounded-lg hover:bg-slate-100 transition-colors shadow-sm"
-            title="Refresh incident metrics immediately"
-          >
-            <RefreshCw className={`w-3.5 h-3.5 ${isRefreshing ? 'animate-spin' : ''}`} />
-            <span>Sync</span>
-          </button>
-        </div>
-      </div>
-
       {/* Sleek KPI Strip - Balanced & Compact */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Metric 1 */}

@@ -7,8 +7,7 @@ import {
 } from 'recharts';
 import {
   Network, Sparkles, Send, History, CheckCircle2,
-  Activity, MessageSquare, ArrowRight, Layers,
-  Zap, Pause, Play, RefreshCw
+  Activity, MessageSquare, ArrowRight, Layers
 } from 'lucide-react';
 
 interface BusinessAnalystDashboardProps {
@@ -34,7 +33,7 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
   const [isInjecting, setIsInjecting] = useState(false);
   const [adaptationResult, setAdaptationResult] = useState<any>(null);
 
-  // Real-Time Behavioural Anomaly Telemetry State
+  // Behavioural Anomaly Telemetry State
   const defaultTelemetry = [
     { time: '13:00', baseline: 4.2, actual: 4.5, latency_ms: 220, is_anomaly: false },
     { time: '13:30', baseline: 4.2, actual: 4.8, latency_ms: 240, is_anomaly: false },
@@ -53,8 +52,6 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
     baseline_rate: 4.2,
     spike_percentage: 830.9
   });
-  const [isStreaming, setIsStreaming] = useState<boolean>(true);
-  const [isBurstSimulating, setIsBurstSimulating] = useState<boolean>(false);
   const [lastTelemetryUpdate, setLastTelemetryUpdate] = useState<Date>(new Date());
 
   const fetchTelemetry = async () => {
@@ -67,24 +64,6 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
       }
     } catch (err) {
       console.error('Failed to fetch telemetry stream:', err);
-    }
-  };
-
-  const handleSimulateBurst = async () => {
-    setIsBurstSimulating(true);
-    try {
-      const res = await api.simulateBurst(companyId);
-      if (res && res.points) {
-        setTelemetryData(res.points);
-        setTelemetryMeta(res);
-      }
-      showToast('Real-time payment retry storm & checkout dropout burst simulated!', 'info');
-      await loadData();
-    } catch (err) {
-      console.error(err);
-      showToast('Burst simulation failed', 'error');
-    } finally {
-      setIsBurstSimulating(false);
     }
   };
 
@@ -126,16 +105,14 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
     loadData();
   }, [companyId]);
 
-  // Real-time telemetry sliding-window poll (every 3 seconds)
+  // Periodic telemetry sliding-window poll
   useEffect(() => {
     fetchTelemetry();
     const interval = setInterval(() => {
-      if (isStreaming) {
-        fetchTelemetry();
-      }
-    }, 3000);
+      fetchTelemetry();
+    }, 4000);
     return () => clearInterval(interval);
-  }, [companyId, selectedIncidentId, timeRange, isStreaming]);
+  }, [companyId, selectedIncidentId, timeRange]);
 
   // Periodic background refresh for incidents and signals
   useEffect(() => {
@@ -284,48 +261,25 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
                 <p className="text-xs text-slate-500 mt-0.5">Sliding-window payment retry rate surge vs 7-day moving baseline</p>
               </div>
               
-              <div className="flex items-center flex-wrap gap-2">
-                {/* Simulate Burst Action */}
+              <div className="flex items-center space-x-1 bg-slate-100 p-0.5 rounded-lg text-xs font-medium text-slate-600">
                 <button
-                  onClick={handleSimulateBurst}
-                  disabled={isBurstSimulating}
-                  className="flex items-center space-x-1.5 text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200/80 px-2.5 py-1 rounded-lg hover:bg-rose-100/80 active:scale-95 transition-all shadow-sm"
-                  title="Inject real-time transaction dropouts and multi-attempt retry storm"
+                  onClick={() => setTimeRange('1h')}
+                  className={`px-2.5 py-1 rounded-md transition-all ${timeRange === '1h' ? 'bg-white text-slate-900 shadow-sm font-semibold' : 'hover:text-slate-900'}`}
                 >
-                  <Zap className={`w-3.5 h-3.5 ${isBurstSimulating ? 'animate-bounce' : ''}`} />
-                  <span>{isBurstSimulating ? 'Simulating...' : 'Simulate Spike'}</span>
+                  1h
                 </button>
-
-                {/* Pause/Stream Toggle */}
                 <button
-                  onClick={() => setIsStreaming(!isStreaming)}
-                  className="p-1.5 text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200/70 rounded-lg transition-colors"
-                  title={isStreaming ? 'Pause live stream' : 'Resume live stream'}
+                  onClick={() => setTimeRange('6h')}
+                  className={`px-2.5 py-1 rounded-md transition-all ${timeRange === '6h' ? 'bg-white text-slate-900 shadow-sm font-semibold' : 'hover:text-slate-900'}`}
                 >
-                  {isStreaming ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+                  6h
                 </button>
-
-                {/* Time range switcher */}
-                <div className="flex items-center space-x-1 bg-slate-100 p-0.5 rounded-lg text-xs font-medium text-slate-600">
-                  <button
-                    onClick={() => setTimeRange('1h')}
-                    className={`px-2 py-0.5 rounded-md transition-all ${timeRange === '1h' ? 'bg-white text-slate-900 shadow-sm font-semibold' : 'hover:text-slate-900'}`}
-                  >
-                    1h
-                  </button>
-                  <button
-                    onClick={() => setTimeRange('6h')}
-                    className={`px-2 py-0.5 rounded-md transition-all ${timeRange === '6h' ? 'bg-white text-slate-900 shadow-sm font-semibold' : 'hover:text-slate-900'}`}
-                  >
-                    6h
-                  </button>
-                  <button
-                    onClick={() => setTimeRange('24h')}
-                    className={`px-2 py-0.5 rounded-md transition-all ${timeRange === '24h' ? 'bg-white text-slate-900 shadow-sm font-semibold' : 'hover:text-slate-900'}`}
-                  >
-                    24h
-                  </button>
-                </div>
+                <button
+                  onClick={() => setTimeRange('24h')}
+                  className={`px-2.5 py-1 rounded-md transition-all ${timeRange === '24h' ? 'bg-white text-slate-900 shadow-sm font-semibold' : 'hover:text-slate-900'}`}
+                >
+                  24h
+                </button>
               </div>
             </div>
 
@@ -386,10 +340,10 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
               </ResponsiveContainer>
             </div>
 
-            {/* Live Telemetry KPI Indicators */}
+            {/* Telemetry Operational Indicators */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs border-t border-slate-100 pt-3">
               <div className="space-y-0.5">
-                <span className="text-[11px] text-slate-500">Live Retry Rate</span>
+                <span className="text-[11px] text-slate-500">Current Retry Rate</span>
                 <div className="flex items-center space-x-1.5 font-bold font-mono text-sm">
                   <span className={telemetryMeta?.is_recovered ? 'text-emerald-600' : 'text-rose-600'}>
                     {telemetryMeta?.current_retry_rate ?? 4.2}%
