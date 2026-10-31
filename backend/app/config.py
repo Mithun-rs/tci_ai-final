@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     # Supabase credentials (optional, falls back gracefully to SQLite)
     SUPABASE_URL: str = ""
     SUPABASE_KEY: str = ""
+    SUPABASE_SERVICE_ROLE_KEY: str = ""
     DATABASE_URL: str = "sqlite:///./cx_pulse.db"
     
     # Gemini API Key (optional, falls back gracefully to deterministic AI reasoning)

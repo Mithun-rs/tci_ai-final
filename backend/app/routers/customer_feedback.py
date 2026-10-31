@@ -30,6 +30,16 @@ def submit_complaint(complaint: SupportTicketCreate, db: Session = Depends(get_d
 
 @router.get("/complaints")
 def list_complaints(company_id: str, db: Session = Depends(get_db)):
+    from app.services.supabase_client import get_supabase_client
+    client = get_supabase_client()
+    if client:
+        try:
+            res = client.table("support_tickets").select("*").eq("company_id", company_id).order("created_at", desc=True).execute()
+            if res.data and len(res.data) > 0:
+                return res.data
+        except Exception as e:
+            print(f"[Supabase] complaints fetch notice: {e}")
+
     return db.query(SupportTicket).filter(
         SupportTicket.company_id == company_id
     ).order_by(SupportTicket.created_at.desc()).all()

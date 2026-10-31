@@ -4,11 +4,21 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.db_models import DetectedSignal, CXIncident
 from app.services.anomaly_detector import AnomalyDetector
+from app.services.supabase_client import get_supabase_client
 
 router = APIRouter(prefix="/signals", tags=["Silent Problem Detection & Real-Time Telemetry"])
 
 @router.get("")
 def get_detected_signals(company_id: str, db: Session = Depends(get_db)):
+    client = get_supabase_client()
+    if client:
+        try:
+            res = client.table("detected_signals").select("*").eq("company_id", company_id).order("detected_at", desc=True).execute()
+            if res.data and len(res.data) > 0:
+                return res.data
+        except Exception as e:
+            print(f"[Supabase] signals fetch notice: {e}")
+
     signals = db.query(DetectedSignal).filter(
         DetectedSignal.company_id == company_id
     ).order_by(DetectedSignal.detected_at.desc()).all()
