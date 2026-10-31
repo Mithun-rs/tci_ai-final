@@ -264,19 +264,7 @@ export const BusinessAnalystDashboard: React.FC<BusinessAnalystDashboardProps> =
           <div className="lg:col-span-2 bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
               <div>
-                <div className="flex items-center space-x-2">
-                  <h3 className="text-xs font-semibold text-slate-900 uppercase tracking-wider">Behavioural Anomaly Telemetry</h3>
-                  {isStreaming ? (
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/80">
-                      <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                      Live Stream (3s)
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">
-                      Stream Paused
-                    </span>
-                  )}
-                </div>
+                <h3 className="text-xs font-semibold text-slate-900 uppercase tracking-wider">Behavioural Anomaly Telemetry</h3>
                 <p className="text-xs text-slate-500 mt-0.5">Sliding-window payment retry rate surge vs 7-day moving baseline</p>
               </div>
               
